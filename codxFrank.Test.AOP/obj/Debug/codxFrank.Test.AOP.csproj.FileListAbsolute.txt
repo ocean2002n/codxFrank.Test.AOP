@@ -1,0 +1,9 @@
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\bin\Debug\codxFrank.Test.AOP.exe.config
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\bin\Debug\codxFrank.Test.AOP.exe
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\bin\Debug\codxFrank.Test.AOP.pdb
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\bin\Debug\Castle.Core.dll
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\bin\Debug\Castle.Windsor.dll
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\bin\Debug\Castle.Windsor.xml
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\obj\Debug\codxFrank.Test.AOP.csprojResolveAssemblyReference.cache
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\obj\Debug\codxFrank.Test.AOP.exe
+D:\測試專案\codxFrank.Test.AOP\codxFrank.Test.AOP\obj\Debug\codxFrank.Test.AOP.pdb
