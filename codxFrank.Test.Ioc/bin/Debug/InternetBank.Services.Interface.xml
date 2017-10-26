@@ -1,0 +1,3098 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InternetBank.Services.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IActionRecordService">
+            <summary>
+            放行紀錄
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IActionRecordService.FindBy(System.String,Microsoft.InternetBank.Domains.Admin.PermissionGrantStatus,CommonDomain.TimePeriod,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查詢放行紀錄
+            </summary>
+            <param name="targetType"></param>
+            <param name="permissionGrantStatus"></param>
+            <param name="auditPeriod"></param>
+            <param name="modifyStaff"></param>
+            <param name="staffUserName">範例corp\webster</param>
+            <param name="startIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IApprovalService`1">
+            <summary>
+            審核標的物件
+            </summary>
+            <typeparam name="TTarget">審核標的物件</typeparam>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IApprovalService`1.GetCurrent">
+            <summary>
+            取得目前使用的<typeparamref name="TTarget"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IApprovalService`1.Submit(`0)">
+            <summary>
+            將修改後的<typeparamref name="TTarget"/>送審.
+            </summary>
+            <param name="target"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IApprovalService`1.FindLastVersion">
+            <summary>
+            找出最後的<typeparamref name="TTarget"/>版本.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IMaintainFunctionOnOffService">
+            <summary>
+            各類交易上下架功能設定
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainFunctionOnOffService.FindCurrent">
+            <summary>
+            找出目前使用中的功能模組設定值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainFunctionOnOffService.GetCurrent">
+            <summary>
+            取得目前功能模組設定值快取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainFunctionOnOffService.Submit(Microsoft.InternetBank.Domains.Admin.ModuleSettingGroup)">
+            <summary>
+            將修改後的<see cref="T:Microsoft.InternetBank.Domains.Admin.ModuleSettingGroup"/>送審.
+            </summary>
+            <param name="group">The group.</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainFunctionOnOffService.FindLastVersion">
+            <summary>
+            取得最後一版的<see cref="T:Microsoft.InternetBank.Domains.Admin.ModuleSettingGroup"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IAuditService">
+            <summary>
+            審核服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IAuditService.GetDifferenceForReview(System.Guid,System.String)">
+            <summary>
+            根據<paramref name="auditId"/>,取得[送審中]與[使用中]的物件 之差異比對
+            </summary>
+            <param name="auditId">目標的GUID</param>
+            <param name="targetType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IAuditService.GetDifference(System.String,System.Guid,System.Guid)">
+            <summary>
+            取得放行紀錄的差異明細
+            </summary>
+            <param name="targetType">放行目標的類型.</param>
+            <param name="inUseTargetId">當時系統所使用的目標物件Id.</param>
+            <param name="auditTargetId">此送審紀錄所指向的目標物件Id.</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Microsoft.InternetBank.Services.Admin.IAuditService.Approve(System.Guid)" -->
+        <member name="M:Microsoft.InternetBank.Services.Admin.IAuditService.Reject(System.Guid,System.String)">
+            <summary>
+            退回指定的<paramref name="auditId"/>
+            </summary>
+            <param name="auditId">目標的GUID</param>
+            <param name="comment"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IAuditService.Invalidate(System.Guid)">
+            <summary>
+            作廢(刪除)指定的<paramref name="auditId"/>
+            </summary>
+            <param name="auditId">目標的GUID</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IAuditService.FetchSummary(System.String)">
+            <summary>
+            取得審核概要
+            </summary>
+            <param name="targetType">Type of the target.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.ISitePauseService.GetCurrent">
+            <summary>
+            取得目前使用的<see cref="T:Microsoft.InternetBank.Domains.SitePauseConfiguration"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.ISitePauseService.Submit(Microsoft.InternetBank.Domains.SitePauseConfiguration)">
+            <summary>
+            將修改後的<see cref="T:Microsoft.InternetBank.Domains.SitePauseConfiguration"/>送審.
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.ISitePauseService.FindLastVersion">
+            <summary>
+            找出最後的<see cref="T:Microsoft.InternetBank.Domains.SitePauseConfiguration"/>版本.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IMaintainBankCalendarService">
+            <summary>
+            日曆檔檔維護服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCalendarService.FindBy(System.DateTime)">
+            <summary>
+            根據指定日期取得對應的<see cref="T:Microsoft.InternetBank.Domains.Admin.BankCalendar"/>
+            </summary>
+            <param name="searchDate">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCalendarService.FindBy(CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            針對條件尋找日曆檔
+            </summary>
+            <param name="period">日期區間</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCalendarService.FindByTest(System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32,System.Int32)">
+            <summary>
+            測試
+            </summary>
+            <param name="beginDate"></param>
+            <param name="endDate"></param>
+            <param name="startIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCalendarService.InsertBy(Microsoft.InternetBank.Domains.Admin.BankCalendar)">
+            <summary>
+            新增日曆檔
+            </summary>
+            <param name="bankCalendar"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCalendarService.UpdateBy(Microsoft.InternetBank.Domains.Admin.BankCalendar)">
+            <summary>
+            更新日曆檔
+            </summary>
+            <param name="bankCalendar"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCalendarService.DeleteBy(System.Collections.Generic.List{System.DateTime})">
+            <summary>
+            刪除日曆檔
+            </summary>
+            <param name="dateList"></param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IMaintainSystemTimeConfigService">
+            <summary>
+            系統時間設定與參數檔維護服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainSystemTimeConfigService.FindCurrent">
+            <summary>
+            找出目前的系統參數設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainSystemTimeConfigService.GetCurrentConfiguration">
+            <summary>
+            取得目前使用的系統參數設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainSystemTimeConfigService.Submit(Microsoft.InternetBank.Domains.ApplicationConfiguration)">
+            <summary>
+            將修改後的<see cref="T:Microsoft.InternetBank.Domains.ApplicationConfiguration"/>送審.
+            </summary>
+            <param name="target">The target.</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryServiceConnectionService">
+            <summary>
+            網銀與各主機連線狀況查詢服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryServiceConnectionService.FindBy">
+            <summary>
+            列出所有網銀與各主機的連線狀況
+            </summary>        
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IMaintainErrorCodeService">
+            <summary>
+            錯誤代碼檔維護服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainErrorCodeService.FindByCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            錯誤代碼查詢(ERRORCODE查詢)模糊比對
+            </summary>
+            <param name="code">代碼</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>          
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainErrorCodeService.FindByCodeFullMatch(System.String,System.Int32,System.Int32)">
+            <summary>
+            錯誤代碼查詢(ERRORCODE查詢)完全比對
+            </summary>
+            <param name="code">代碼</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>   
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainErrorCodeService.FindByDetail(System.String,System.String,System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            錯誤代碼查詢(系統錯誤代碼維護用)
+            </summary>
+            <param name="code">代碼</param>
+            <param name="description">敘述</param>
+            <param name="displayDescription">顯示訊息</param>
+            <param name="period">建立時間區間</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainErrorCodeService.InsertBy(Microsoft.InternetBank.Domains.Admin.ErrorCode)">
+            <summary>
+            新增錯誤代碼
+            </summary>
+            <param name="errorCode"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainErrorCodeService.UpdateBy(Microsoft.InternetBank.Domains.Admin.ErrorCode)">
+            <summary>
+            修改錯誤代碼
+            </summary>
+            <param name="errorCode"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainErrorCodeService.DeleteBy(System.Collections.Generic.List{System.String})">
+            <summary>
+            刪除錯誤代碼
+            </summary>
+            <param name="codeList">
+            錯誤代碼清單
+            </param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryApplicationAccessRecordService">
+            <summary>
+            稽核軌跡紀錄 > 應用系統存取稽核軌跡
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryApplicationAccessRecordService.FindBy(System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            查詢系統存取稽核軌跡
+            </summary>
+            <param name="userIdentity">登入帳號</param>
+            <param name="period">日期區間</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>        
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.LogRecordAdapter">
+            <summary>
+            Log紀錄適配器
+            </summary>
+            <seealso cref="T:Microsoft.InternetBank.Domains.LogRecord" />
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Admin.LogRecordAdapter.FunctionDisplayName">
+            <summary>
+            程式/交易名稱
+            </summary>
+            <value>
+            The display name of the function.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Admin.LogRecordAdapter.ActionDisplayName">
+            <summary>
+            動作名稱
+            </summary>
+            <value>
+            The display name of the action.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Admin.LogRecordAdapter.Direction">
+            <summary>
+            方向
+            </summary>
+            <value>
+            The direction.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Admin.LogRecordAdapter.ExecutionResult">
+            <summary>
+            執行結果
+            </summary>
+            <value>
+            The transaction result.
+            </value>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IMaintainBankCodeService">
+            <summary>
+            銀行檔維護服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCodeService.FindBy(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            針對條件尋找銀行分行
+            </summary>
+            <param name="code"></param>
+            <param name="branchCode"></param>
+            <param name="collectionOfTicketCode"></param>
+            <param name="bankFullName"></param>
+            <param name="shortName"></param>
+            <param name="startIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCodeService.InsertBy(Microsoft.InternetBank.Domains.BranchBank)">
+            <summary>
+            新增銀行分行
+            </summary>
+            <param name="branchBank"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCodeService.UpdateBy(Microsoft.InternetBank.Domains.BranchBank)">
+            <summary>
+            更新銀行分行
+            </summary>
+            <param name="branchBank"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IMaintainBankCodeService.DeleteBy(Microsoft.InternetBank.Domains.BranchBank)">
+            <summary>
+            刪除銀行分行
+            </summary>
+            <param name="code"></param>
+            <param name="branchCode"></param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryBatchFileStatusService">
+            <summary>
+            提供批次檔案狀態查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryBatchFileStatusService.FetchAllBatchItems">
+            <summary>
+            取得可查詢狀態的批次項目
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryBatchFileStatusService.FindBy(System.String,CommonDomain.TimePeriod,Microsoft.InternetBank.Domains.Admin.BatchStatus,System.Int32,System.Int32)">
+            <summary>
+            批次檔狀態作業查詢
+            </summary>
+            <param name="itemValue">項目值.</param>
+            <param name="period">日期區間.</param>
+            <param name="status">狀態.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryFundBatchFileStatusService">
+            <summary>
+            基金批次執行結果查詢介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryFundBatchFileStatusService.FindBy(System.String,System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            基金訂單
+            </summary>
+            <param name="orderStatus"></param>
+            <param name="orderType"></param>
+            <param name="timePeriod"></param>
+            <param name="startIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryModuleDescriptionService">
+            <summary>
+            交易管理查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryModuleDescriptionService.FetchAll(System.Int32,System.Int32)">
+            <summary>
+            分頁取得全部的交易模組描述
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryModuleDescriptionService.FetchManagement(System.Int32,System.Int32)">
+            <summary>
+            分頁取得後台的交易模組描述
+            </summary>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryModuleDescriptionService.FetchBy(System.String)">
+            <summary>
+            以namespace作為前置詞查詢對應的模組敘述
+            </summary>
+            <param name="namespacePrefix">The namespace prefix.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryModuleDescriptionService.Save(System.Collections.Generic.IEnumerable{Microsoft.InternetBank.Domains.ModuleDescription})">
+            <summary>
+            儲存
+            </summary>
+            <param name="descriptions">The descriptions.</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryUserAccessRecordService">
+            <summary>
+            網銀客戶交易查詢 > 客戶動作記錄
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryUserAccessRecordService.FindDetailBy(System.String,CommonDomain.TimePeriod,Microsoft.InternetBank.Domains.Admin.UserActionStyle,System.Int32,System.Int32)">
+            <summary>
+            查詢客戶動作記錄(明細)
+            </summary>
+            <param name="userIdentity">客戶Id</param>
+            <param name="period">日期區間</param>
+            <param name="action">動作</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryUserAccessRecordService.FindFailBy(System.String,CommonDomain.TimePeriod,System.String,System.Int32,System.Int32)">
+            <summary>
+            客戶交易失敗紀錄查詢
+            </summary>
+            <param name="userIdentity">客戶Id</param>
+            <param name="period">日期區間</param>
+            <param name="returnCode">回應代碼</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryFundAcctDetailService">
+            <summary>
+            基金交易查詢 介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryFundAcctDetailService.FindRealTimeFundTransactionRecord(System.String,System.String,CommonDomain.TimePeriod,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查詢基金交易紀錄(即時)
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryFundAcctDetailService.FindOrderedFundTransactionRecord(System.String,System.String,CommonDomain.TimePeriod,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查詢基金交易紀錄(預約)
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryFundAcctDetailService.FindETFTransactionRecord(Microsoft.InternetBank.Domains.Admin.TransactionModelForETF,System.String,CommonDomain.TimePeriod,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查詢ETF交易紀錄
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Admin.IQueryUserLogInOutRecordService">
+            <summary>
+            稽核軌跡紀錄  > 使用者登出入紀錄
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Admin.IQueryUserLogInOutRecordService.FindBy(System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            查詢使用者登出入紀錄
+            </summary>
+            <param name="userIdentity">登入帳號</param>
+            <param name="period">日期區間</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>        
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IRegisterCreditCardMemberService">
+            <summary>
+            加入信用卡會員服務 服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IRegisterCreditCardMemberService.SendValidationCode(System.String,System.String,System.DateTime,System.String,System.Boolean)">
+            <summary>
+            發送驗證碼
+            </summary>        
+            <param name="groupId">身分證字號</param>
+            <param name="birthday">生日年月日</param>
+            <param name="creditCardNumber">信用卡卡號</param>
+            <param name="validDate">卡片有效月年</param>
+             <param name="isByEmail">是否為Email</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IRegisterCreditCardMemberService.ExecuteRegistration(Microsoft.InternetBank.Domains.CreditCard.ApplyCreditCardMemberInformation)">
+            <summary>
+            執行信用卡會員申請
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IActivateCreditCardOnlineService">
+            <summary>
+            信用卡線上開卡 服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IActivateCreditCardOnlineService.CreditCardMisappropriation(System.String,System.DateTime,System.String,System.String)">
+            <summary>
+            開卡
+            </summary>        
+            <param name="idNumber">身分證字號</param>
+            <param name="birthday">生日年月日</param>
+            <param name="creditCardNumber">信用卡卡號</param>
+            <param name="validDate">卡片有效月年</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.ICreditCardCashRewardRedemptionService">
+            <summary>
+            現金點數兌換服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.ICreditCardCashRewardRedemptionService.QueryCurrentCashReward">
+            <summary>
+            目前累積現金點數查詢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.ICreditCardCashRewardRedemptionService.DoCashRewardRedemption(System.Decimal)">
+            <summary>
+            執行現金點數兌換
+            </summary>
+            <param name="amount">現金點數數量</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.ICreditCardRewardRedemptionService">
+            <summary>
+            紅利商品兌換服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.ICreditCardRewardRedemptionService.QueryCurrentReward">
+            <summary>
+            目前累積紅利點數查詢
+            </summary>
+            <returns><seealso cref="T:Microsoft.InternetBank.Domains.CreditCard.CreditCardRewardRedemption"/></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.ICreditCardRewardRedemptionService.QueryBonusExchange(System.Decimal,System.Decimal)">
+            <summary>
+            可兌換紅利商品查詢
+            </summary>
+            <param name="amountStart">金額起始</param>
+            /// <param name="amountEnd">金額結束</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.ICreditCardRewardRedemptionService.DoRewardRedemption(System.String,System.Decimal)">
+            <summary>
+            執行紅利商品兌換
+            </summary>        
+            <param name="productCode">產品代碼</param>
+            <param name="amount">數量</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.ICreditCardAutomaticPaymentSettingsChangeService">
+            <summary>
+            本期自動扣繳變更服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.ICreditCardAutomaticPaymentSettingsChangeService.FindQueryCreditCardAutomaticDebitResultBy">
+            <summary>
+            信用卡自動扣款資料查詢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.ICreditCardAutomaticPaymentSettingsChangeService.SaveCreditCardAutomaticPaymentSetting(System.Decimal)">
+            <summary>
+            變更信用卡自動繳款金額
+            </summary>
+            <param name="amount"></param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IInstalmentRegisterService">
+            <summary>
+            消費分期設定服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IInstalmentRegisterService.FetchSetting(System.String,System.DateTime,System.Decimal,System.String,System.Int32)">
+            <summary>
+            分期申請查詢
+            </summary>
+            <param name="cardNumber">信用卡卡號</param>
+            <param name="purchaseDate">消費日期</param>
+            <param name="purchaseAmount">消費金額</param>
+            <param name="authorizationCode">授權碼</param>
+            <param name="installment">分期期數</param>
+            <returns>分期申請查詢結果</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IInstalmentRegisterService.ExecuteSetting(System.String,System.DateTime,System.Decimal,System.String,System.Int32)">
+            <summary>
+            分期申請設定
+            </summary>
+            <param name="cardNumber">信用卡卡號</param>
+            <param name="purchaseDate">消費日期</param>
+            <param name="purchaseAmount">消費金額</param>
+            <param name="authorizationCode">授權碼</param>
+            <param name="installment">分期期數</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IQueryCreditCardRewardService">
+            <summary>
+            紅利點數查詢服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IQueryCreditCardRewardService.FetchReward">
+            <summary>
+            紅利點數查詢
+            </summary>                
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IQueryCreditCardCashRewardService">
+            <summary>
+            現金點數查詢服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IQueryCreditCardCashRewardService.FetchCashReward">
+            <summary>
+            現金點數查詢
+            </summary>                
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IAnnualSpendingAnalysisService">
+            <summary>
+            年消費分析 服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IAnnualSpendingAnalysisService.FetchCostYears">
+            <summary>
+            查詢消費年度
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IAnnualSpendingAnalysisService.FetchAnnualSpendingAnalysis(System.DateTime)">
+            <summary>
+            查詢年度消費分析資料
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IQueryCreditCardRewardRedemptionService">
+            <summary>
+            紅利兌換進度查詢 服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IQueryCreditCardRewardRedemptionService.FindBy">
+            <summary>
+            紅利兌換進度查詢
+            </summary>                
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IVisaApplicationProgressService">
+            <summary>
+            信用卡申請進度查詢 服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IVisaApplicationProgressService.FindBy">
+            <summary>
+            信用卡申請進度查詢
+            </summary>                
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IQueryCreditCardSummaryService">
+            <summary>
+            卡戶帳務明細查詢服務介面
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IQueryMonthlyStatementService">
+            <summary>
+            IQueryMonthlyStatementService Interface
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IQueryMonthlyStatementService.FetchQueryableMonth">
+            <summary>
+            Fetches the queryable month.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IQueryMonthlyStatementService.FetchNewBillDetailForCreditCard(System.DateTime)">
+            <summary>
+            Fetches the new bill detail for credit card.
+            </summary>
+            <param name="month">The month.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.CreditCard.IQueryMonthlyStatementService.FetchLabelOfCreditCardBill(System.DateTime)">
+            <summary>
+            Fetches the label of credit card bill.
+            </summary>
+            <param name="month">The month.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.CreditCard.IUnpostedCreditCardTransactionService">
+            <summary>
+            未出帳帳務查詢 服務介面
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.IPushOTPService">
+            <summary>
+            行動保鑣
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IPushOTPService.CreateTransaction(Microsoft.InternetBank.Domains.PushCondition)">
+            <summary>
+            開啟驗證需求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IPushOTPService.PullingTransactionResult(System.String,System.String)">
+            <summary>
+            查詢交易狀態
+            </summary>
+            <param name="deviceId">裝置代號</param>
+            <param name="transactionId">交易序號</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ForeignTransaction.IForeignTransactionService">
+            <summary>
+            外幣轉帳交易服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignTransactionService.FetchForeignExchangeUsage(Microsoft.InternetBank.Domains.ForeignTransaction.ExchangeType)">
+            <summary>
+            取得外幣轉帳分類清單
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignTransactionService.Transfer(System.Decimal,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            轉帳
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignTransactionService.Validate(System.Decimal,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            轉帳資料檢查
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignTransactionService.IsThisAccountBelongToCurrentUser(System.String)">
+            <summary>
+            檢查轉入帳號是不是使用者自己的(用以過濾匯款分類清單)
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ForeignTransaction.IForeignCurrencyRemittanceTransactionService">
+            <summary>
+            外幣匯出匯款申請服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignCurrencyRemittanceTransactionService.IsCustomerObu">
+            <summary>
+            判斷客戶是否為OBU
+            </summary>
+            <returns>
+              <c>true</c> if [customer is OBU]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignCurrencyRemittanceTransactionService.FetchOutAccounts(System.Boolean)">
+            <summary>
+            取得扣款帳號
+            </summary>
+            <param name="isTaiwanDollar">是否為台幣帳戶</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignCurrencyRemittanceTransactionService.FetchInwardData(System.String,System.String)">
+            <summary>
+            取得受款人帳號
+            </summary>
+            <param name="accountNumber">The account number.</param>
+            <param name="currencyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignCurrencyRemittanceTransactionService.FetchForeignExchangeUsage(System.String,System.Boolean,System.String)">
+            <summary>
+            取得匯款用途
+            </summary>
+            <param name="accountNumber">The account number.</param>
+            <param name="isTaiwanDollar"></param>
+            <param name="areaCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignCurrencyRemittanceTransactionService.QueryPrice(Microsoft.InternetBank.Domains.ForeignTransaction.RemittanceTransactionOrder)">
+            <summary>
+            查詢價格與匯率
+            </summary>
+            <param name="order">The order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignCurrencyRemittanceTransactionService.Submit(Microsoft.InternetBank.Domains.ForeignTransaction.RemittanceTransactionOrder,System.String)">
+            <summary>
+            送出
+            </summary>
+            <param name="order">The order.</param>
+            <param name="financialPassword">理財密碼.</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ForeignTransaction.IForeignExchangeCommonService">
+            <summary>
+            外匯交易共用服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignExchangeCommonService.CheckForeignExchangeTimePeriod">
+            <summary>
+            檢核外幣交易時間區間
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignExchangeCommonService.CheckCNYAccumulatedLimitation(System.String,System.Decimal,System.Boolean)">
+            <summary>
+            檢核是否可進行人民幣交易(累計限額檢查)
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignExchangeCommonService.GetExchangeRate(System.String,System.String,System.Boolean)">
+            <summary>
+            取得匯率
+            </summary>
+            <param name="currencyCodeFrom"></param>
+            <param name="currencyCodeTo"></param>
+            <param name="wantOriginalRate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignExchangeCommonService.GetCurrenciesForNTDollar">
+            <summary>
+            取得台幣帳戶可承做之幣別
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IForeignExchangeCommonService.GetCurrenciesForForeignExchange">
+            <summary>
+            取得外幣帳戶可承做之幣別
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignExchangeService">
+            <summary>
+            換匯轉帳交易服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignExchangeService.FindExchangeMemo(Microsoft.InternetBank.Domains.ForeignTransaction.ExchangeTransactionType,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            找出轉帳資訊
+            </summary>
+            <param name="type">交易類型</param>
+            <param name="period">時間區間</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁筆數</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignExchangeService.FindForeignOutRemitApplicationStatus(Microsoft.InternetBank.Domains.ForeignInOutResultStatus,CommonDomain.TimePeriod,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            外幣匯出匯款申請狀態查詢
+            </summary>
+            <param name="status">交易狀態</param>
+            <param name="period">時間區間</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁筆數</param>
+            <param name="freshCache">true: 強制清空快取</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignExchangeService.FetchBy(System.String)">
+            <summary>
+            根據<paramref name="transactionNumber"/>取得<see cref="T:Microsoft.InternetBank.Domains.ForeignTransaction.QueryForeignOutRemitApplicationResult"/>
+            </summary>
+            <param name="transactionNumber">交易編號.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignExchangeService.FetchReport(System.Guid)">
+            <summary>
+            取得水單/交易憑證
+            </summary>
+            <param name="memoId">The memo identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignExchangeService.TransferToBillOfExchange(Microsoft.InternetBank.Domains.ForeignTransaction.QueryForeignOutRemitApplicationResult)">
+            <summary>
+            把<paramref name="applicationResult"/>轉換為<see cref="T:Microsoft.InternetBank.Domains.ExchangeMemo"/>的物件.
+            </summary>
+            <param name="applicationResult">NF426 匯出匯款申請明細查詢</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignInRemitService">
+            <summary>
+            提供匯款匯入查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignInRemitService.FetchBy(CommonDomain.TimePeriod,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            根據日期區間查詢<see cref="T:Microsoft.InternetBank.Domains.ForeignTransaction.ForeignInRemitDetail"/>.
+            </summary>
+            <param name="period">The period.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="ensureFresh">if set to <c>true</c> [ensure fresh].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignOutRemitService">
+            <summary>
+            QueryForeignOutRemitService Interface
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ForeignTransaction.IQueryForeignOutRemitService.FetchBy(CommonDomain.TimePeriod,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Fetches the by.
+            </summary>
+            <param name="period">The period.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="ensureFresh">if set to <c>true</c> [ensure fresh].</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.INoPermissionService">
+            <summary>
+            提供網站無權限框架服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.INoPermissionService.FetchModuleDescriptionBy(System.String)">
+            <summary>
+            根據條件取得功能模組描述
+            </summary>
+            <param name="controllerFullName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.INoPermissionService.FetchModuleDescriptionAll">
+            <summary>
+            取得所有功能模組描述
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.INoPermissionService.FetchAllModuleShortcut">
+            <summary>
+            取得所有模組快速連結
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Loan.ILoanRepaymentService">
+            <summary>
+            台幣放款本息繳款
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Loan.ILoanPaymentDetailService">
+            <summary>
+            還款歷史資料查詢 服務介面
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Loan.ILoanDetailService">
+            <summary>
+            放款應繳本息查詢服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Loan.ILoanDetailService.CalculateLoanPayment(Microsoft.InternetBank.Domains.Loan.LoanPaymentCalculation)">
+            <summary>
+            貸款試算
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Notice.IPersonalInternetBankLogOnService">
+            <summary>
+            個網登入通知介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Notice.IPersonalInternetBankLogOnService.SendMail(System.String,System.Boolean)">
+            <summary>
+            執行寄送EMAIL通知
+            </summary>        
+            <param name="channel">通路</param>
+            <param name="isSucess">成功/失敗</param>   
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.NTDTransfer.INTDollarTransferService">
+            <summary>
+            台幣轉帳服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.NTDTransfer.INTDollarTransferService.GetReferenceFee">
+            <summary>
+            取得參考手續費
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.NTDTransfer.INTDollarTransferService.Submit(Microsoft.InternetBank.Domains.NTDTransfer.NTDollarTransferOrder)">
+            <summary>
+            送出
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.NTDTransfer.INTDollarTransferService.Email(Microsoft.InternetBank.Domains.NTDTransfer.NTDollarMailParameter)">
+            <summary>
+            寄信
+            </summary> 
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.NTDTransfer.INTDollarTransferService.PushOTP(Microsoft.InternetBank.Domains.NTDTransfer.NTDollarTransferOrder)">
+            <summary>
+            開啟驗證需求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.NTDTransfer.IAppointedTransferService">
+            <summary>
+            預約轉帳查詢 服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.NTDTransfer.IAppointedTransferService.AppointedTransferCancel(System.Collections.Generic.IList{Microsoft.InternetBank.Domains.NTDTransfer.AppointedTransferDetail},System.String,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            網銀預約轉帳取消
+            </summary>
+            <param name="appointedTransferDetails"></param>
+            <param name="accountId"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <param name="queryCategory"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService">
+            <summary>
+            歸戶查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService.FetchTotalSummary">
+            <summary>
+            取得歸戶查詢總計資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService.FetchTaiwanDollarAccounts">
+            <summary>
+            取得台幣帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService.FetchForeignExchangeAccounts">
+            <summary>
+            取得外幣帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService.FetchAuthorizationAccounts(System.Boolean)">
+            <summary>
+            取得授權戶帳號
+            </summary>
+            <param name="isForeign">若為 <c>true</c> 則取得外幣帳號, 否則為台幣.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService.FetchFundInvestmentItems">
+            <summary>
+            取得基金/信託投資概要
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService.FetchLoanAccounts">
+            <summary>
+            取得貸款資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryAccountSummaryService.QueryCreditCardSummary">
+            <summary>
+            取得信用卡資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.ITodayInwardRemitService">
+            <summary>
+            當日匯入匯款查詢服務介面
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.IWithholdingStatementService">
+            <summary>
+            扣繳憑單服務介面
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.IQueryCollectionBillService">
+            <summary>
+            託收票據查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryCollectionBillService.FetchAll(System.String,CommonDomain.TimePeriod,System.Int64,System.Int64,Microsoft.InternetBank.Domains.AccountQuery.CollectionBillQueryType,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Fetches all.
+            </summary>
+            <param name="account">The account.</param>
+            <param name="period">The period.</param>
+            <param name="amountStart">The amount start.</param>
+            <param name="amountEnd">The amount end.</param>
+            <param name="queryType">Type of the query.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="ensureFresh">if set to <c>true</c> [ensure fresh].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryCollectionBillService.FetchCollectionBillBackInformation">
+            <summary>
+            查詢個人託收票據領回資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryCollectionBillService.ObtainCollectionBillBack(Microsoft.InternetBank.Domains.AccountQuery.CollectionBillBackInformation)">
+            <summary>
+            查詢託收票據
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryCollectionBillService.RecordCollectionBillBack(System.Collections.Generic.IEnumerable{Microsoft.InternetBank.Domains.AccountQuery.CollectionBillRecord},System.String,System.String,System.String)">
+            <summary>
+            紀錄託收票據領回
+            </summary>
+            <param name="Record"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryCollectionBillService.FetchBranchBy(System.String)">
+            <summary>
+            查詢分行
+            </summary>
+            <param name="branchCode"></param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.IQueryPayrollDetailService">
+            <summary>
+            薪資單明細查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryPayrollDetailService.GetSalaryType">
+            <summary>
+            Gets the type of the salary.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryPayrollDetailService.GetSalaryDate(System.String)">
+            <summary>
+            Gets the salary date.
+            </summary>
+            <param name="salaryType">Type of the salary.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryPayrollDetailService.QuerySalary(System.String,System.String)">
+            <summary>
+            Queries the salary.
+            </summary>
+            <param name="salaryType">Type of the salary.</param>
+            <param name="salaryDate">The salary date.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.IQueryChequePayableService">
+            <summary>
+            薪資單明細查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryChequePayableService.FindBy(System.String)">
+            <summary>
+            FindBy
+            </summary>
+            <param name="bankAccountId">The account.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IQueryChequePayableService.FetchBy(System.String,System.Int32,System.Int32)">
+            <summary>
+            FetchBy
+            </summary>
+            <param name="bankAccountId">The account.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>        
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.IVirtualAccountTransactionService">
+            <summary>
+            虛擬帳號交易記錄查詢服務
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.IAccountTransactionService">
+            <summary>
+            提供帳戶交易明細查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IAccountTransactionService.FetchFunctionAccounts">
+            <summary>
+            取得交易帳戶資料
+            </summary>        
+            <returns>交易明細查詢帳戶</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IAccountTransactionService.FetchTaiwanDollarTransactionDetails(System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            台幣帳戶交易明細查詢
+            </summary>        
+            <param name="accountNumber">帳號</param>
+            <param name="period">查詢區間</param>
+            <param name="index">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns>分頁查詢結果(附帶總計值)</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.AccountQuery.IAccountTransactionService.FetchForeignExchangeTransactionDetails(System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            外幣帳戶交易明細查詢
+            </summary>        
+            <param name="accountNumber">帳號</param>
+            <param name="period">查詢區間</param>
+            <param name="index">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns>分頁查詢結果(附帶總計值)</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.AccountQuery.AccountTransactionTotal">
+            <summary>
+            帳戶交易查詢總計
+            </summary>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.AccountQuery.AccountTransactionTotal.Expenditure">
+            <summary>
+            支出
+            </summary>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.AccountQuery.AccountTransactionTotal.Deposit">
+            <summary>
+            存入
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.BillPayment.IAutomaticBillPaymentSettingsService">
+            <summary>
+            自動扣繳設定服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IAutomaticBillPaymentSettingsService.FetchAllOperatingOfficeCode">
+            <summary>
+            取得所有營運處代碼(驗證用)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IAutomaticBillPaymentSettingsService.SettingBy(Microsoft.InternetBank.Domains.BillPayment.ChunghwaTelecomAutomaticBillPaymentSettings)">
+            <summary>
+            中華電信費用代繳設定
+            </summary>
+            <param name="chunghwaTelecomAutomaticBillPaymentSettings"></param>
+            <returns>主機交易序號</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IAutomaticBillPaymentSettingsService.SettingBy(Microsoft.InternetBank.Domains.BillPayment.TaiwanPowerFeeBillPaymentSettings)">
+            <summary>
+            台電電費代繳設定
+            </summary>
+            <param name="taiwanPowerFeeBillPaymentSettings"></param>
+            <returns>主機交易序號</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IAutomaticBillPaymentSettingsService.SettingBy(Microsoft.InternetBank.Domains.BillPayment.TaiwanWaterFeeBillPaymentSettings)">
+            <summary>
+            台灣省自來水費代繳設定
+            </summary>
+            <param name="taiwanWaterFeeBillPaymentSettings"></param>
+            <returns>主機交易序號</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IAutomaticBillPaymentSettingsService.SettingBy(Microsoft.InternetBank.Domains.BillPayment.TaipeiWaterFeeBillPaymentSettings)">
+            <summary>
+            台北市自來水費代繳
+            </summary>
+            <param name="taipeiWaterFeeBillPaymentSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IAutomaticBillPaymentSettingsService.SettingBy(Microsoft.InternetBank.Domains.BillPayment.TaipeiGasFeeBillPaymentSettings)">
+            <summary>
+            大台北瓦斯費代繳
+            </summary>
+            <param name="taipeiGasFeeBillPaymentSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.BillPayment.ICreditCardPaymentService">
+            <summary>
+            信用卡繳款服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.ICreditCardPaymentService.QueryCreditCardPaymentInformation">
+            <summary>
+            取得信用卡繳費資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.ICreditCardPaymentService.ImmediatelyCreditCardPayment(Microsoft.InternetBank.Domains.BillPayment.ImmediatelyCreditCardPayment)">
+            <summary>
+            即時網銀信用卡費轉帳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.ICreditCardPaymentService.ReservationCreditCardPayment(Microsoft.InternetBank.Domains.BillPayment.ReservationCreditCardPayment)">
+            <summary>
+            預約網銀信用卡費轉帳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService">
+            <summary>
+            提供保險費繳納服務
+            </summary>
+            <remarks>
+            新光人壽、國民年金保險、勞工保險
+            </remarks>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService.FetchPaymentPolicies">
+            <summary>
+            取得繳款保單與金額
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService.FetchPaymentItem(System.String,System.String,System.String)">
+            <summary>
+            取得繳款月份項目
+            </summary>
+            <param name="policyCode">保單號碼</param>
+            <param name="paymentAccount">繳款帳號</param>
+            <param name="sequenceNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService.Submit(System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            送出繳款
+            </summary>
+            <param name="policyCode">保單編號</param>
+            <param name="paymentAccount">繳款帳號</param>
+            <param name="cancelNumber">銷帳編號</param>
+            <param name="password">密碼</param>
+            <param name="payAmount">應繳金額</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService.PayNationalPensionInsurance(Microsoft.InternetBank.Domains.BillPayment.PaymentForInsurance)">
+            <summary>
+            繳納國民年金
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService.PushOTPForNational(Microsoft.InternetBank.Domains.BillPayment.PaymentForInsurance)">
+            <summary>
+            開啟驗證需求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService.PayToLaborInsurance(Microsoft.InternetBank.Domains.BillPayment.PaymentForInsurance)">
+            <summary>
+            繳納勞工保險費
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IInsurancePaymentService.PushOTPForLabor(Microsoft.InternetBank.Domains.BillPayment.PaymentForInsurance)">
+            <summary>
+            開啟驗證需求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.BillPayment.IChunghwaTelecomBillPaymentService">
+            <summary>
+            中華電電信費繳納服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IChunghwaTelecomBillPaymentService.FindBy(Microsoft.InternetBank.Domains.BillPayment.ChunghwaTelecomBillPaymentQuery)">
+            <summary>
+            中華電電信費繳納帳單查詢
+            </summary>
+            <param name="chunghwaTelecomBillPaymentQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.IChunghwaTelecomBillPaymentService.SubmitBy(Microsoft.InternetBank.Domains.BillPayment.ChunghwaTelecomBillPaymentPost)">
+            <summary>
+            中華電電信費繳納帳單送出
+            </summary>
+            <param name="chunghwaTelecomBillPaymentPost"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.BillPayment.ITaxPaymentService">
+            <summary>
+            稅款繳納服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.ITaxPaymentService.GetTaxList">
+            <summary>
+            查詢全部稅款類別
+            </summary>
+            <returns>全部稅款類別</returns>        
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.ITaxPaymentService.ExecuteBillPayment(Microsoft.InternetBank.Domains.BillPayment.TaxCondition)">
+            <summary>
+            執行稅款繳納
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.BillPayment.ITaxPaymentService.PushOTP(Microsoft.InternetBank.Domains.BillPayment.TaxCondition)">
+            <summary>
+            開啟驗證需求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.DataSynchronization.IBondPriceService">
+            <summary>
+            提供股價查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.DataSynchronization.IBondPriceService.GetToday">
+            <summary>
+            取得所有股價
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.DataSynchronization.IBondPriceService.GetByDate(System.String,System.Int32,System.Int32)">
+            <summary>
+            依據日期取得股價
+            </summary>
+            <param name="releaseDate">The date.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.DataSynchronization.IBondPriceService.DeleteToday">
+            <summary>
+            移除當天的股價
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.DataSynchronization.IBondPriceService.Save(System.Collections.Generic.IEnumerable{Microsoft.InternetBank.Domains.BondPrice})">
+            <summary>
+            儲存的股價
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.DataSynchronization.IExchangeRateService">
+            <summary>
+            提供匯率資料查詢
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.DataSynchronization.IExchangeRateService.GetToday">
+            <summary>
+            取得所有匯率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.DataSynchronization.IExchangeRateService.GetByDate(System.String)">
+            <summary>
+            依據日期取得股價
+            </summary>
+            <param name="releaseDate">The date.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.DataSynchronization.IExchangeRateService.SaveToday(System.Collections.Generic.IEnumerable{Microsoft.InternetBank.Domains.ExchangeRate})">
+            <summary>
+            儲存當天的匯率
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.StandardFaultsAttribute">
+            <summary>
+            若WCF service contract需要傳遞錯誤資訊到前端, 請加上此attribute
+            </summary>
+            <seealso cref="T:System.Attribute" />
+            <seealso cref="T:System.ServiceModel.Description.IContractBehavior" />
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.StandardFaultsAttribute.Faults">
+            <summary>
+            取得所有要監聽的錯誤
+            </summary>
+            <value>
+            The faults.
+            </value>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.IAccountService">
+            <summary>
+            提供帳戶資料服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchForeignExchangeAccounts">
+            <summary>
+            取得所有外幣帳戶資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchForeignExchangeAccounts(System.Func{Microsoft.InternetBank.Domains.AccountUsage,System.Boolean})">
+            <summary>
+            取得所有外幣帳戶資料, 並根據條件篩選 (WCF client請勿使用)
+            </summary>
+            <param name="filterCondition">The filter condition.</param>
+            <returns></returns>        
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchForeignExchangeAccounts(System.String,System.String)">
+            <summary>
+            根據 <paramref name="transactionId"/> 和 <paramref name="usageCode"/> 取得外幣帳戶資料 (WCF client請勿使用)
+            </summary>        
+            <param name="transactionId">交易Id.(舊系統的PRID,用來篩選該功能可用的帳戶)</param>
+            <param name="usageCode">交易欄位</param>
+            <returns></returns>        
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAllTaiwanDollarAccounts">
+            <summary>
+            取得所有台幣帳戶資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchTaiwanDollarAccounts(System.String)">
+            <summary>
+            根據<paramref name="transactionId"/>取得擁有的台幣帳戶資料
+            </summary>
+            <param name="transactionId">交易Id.(舊系統的PRID,用來篩選該功能可用的帳戶)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchTaiwanDollarAccounts(System.String,System.Boolean)">
+            <summary>
+            根據<paramref name="transactionId"/>取得擁有的台幣帳戶資料
+            </summary>
+            <param name="transactionId">The transaction identifier.</param>
+            <param name="onlyTransferAccount">是否只要[具備轉帳功能]的帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchTaiwanDollarAccounts(System.String,System.String)">
+            <summary>
+            根據<paramref name="transactionId"/>與<paramref name="usageCode"/>取得擁有的台幣帳戶資料 (WCF client請勿使用)
+            </summary>
+            <param name="transactionId">交易Id.(舊系統的PRID,用來篩選該功能可用的帳戶)</param>
+            <param name="usageCode">交易欄位</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchTaiwanDollarAccounts(System.String,System.Func{Microsoft.InternetBank.Domains.AccountUsage,System.Boolean})">
+            <summary>
+            根據<paramref name="transactionId"/>取得擁有的台幣帳戶資料, 並根據<paramref name="filterCondition"/>把資料篩選出來
+            </summary>
+            <param name="transactionId">The transaction identifier.</param>
+            <param name="filterCondition">篩選條件.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAuthorizationAccounts(System.String)">
+            <summary>
+            根據<paramref name="transactionId"/>取得擁有的授權帳戶資料
+            </summary>
+            <param name="transactionId">交易Id.(舊系統的PRID,用來篩選該功能可用的帳戶)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAuthorizationAllAccounts">
+            <summary>
+            取得所有授權帳戶資料.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAllUsageCodes">
+            <summary>
+            取得所有的<see cref="T:Microsoft.InternetBank.Domains.UsageCode"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAllAppointedForeignAccount(System.String)">
+            <summary>
+            取得約定轉帳外幣帳戶清單
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAllAppointedAccount(System.String)">
+            <summary>
+            取得約定轉帳帳戶清單
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAllAppointedAccountForSetting(System.String)">
+            <summary>
+            取得約定轉帳帳戶清單 - 設定專用
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IAccountService.FetchAllCommonUsedAccount">
+            <summary>
+            取得常用轉帳帳戶清單
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.IAccountInternalService">
+            <summary>
+            內部用的帳戶服務
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ICanaryService">
+            <summary>
+            提供金絲雀測試服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ICanaryService.GetData(System.Int32)">
+            <summary>
+            Gets the data by value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ICanaryService.GetDataUsingDataContract(Microsoft.InternetBank.Domains.Canary)">
+            <summary>
+            Gets the data using data contract.
+            </summary>
+            <param name="composite">The composite.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.ICommonService">
+            <summary>
+            提供與商業無關的公用服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ICommonService.CheckTransferPassword(System.String,System.String)">
+            <summary>
+            檢查轉帳密碼
+            </summary>
+            <param name="accountNumber">The account number.</param>
+            <param name="password">The password.</param>
+            <returns>主機交易序號</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.ICommonService.CheckTransferPassword(System.String,System.String,System.String)">
+            <summary>
+            檢查轉帳密碼
+            </summary>
+            <param name="accountNumber">The account number.</param>
+            <param name="password">The password.</param>
+            <param name="systemCode">The system code.</param>
+            <returns>主機交易序號</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IETFTransactionService">
+            <summary>
+            提供ETF 交易服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFTransactionService.FetchBondsBy(Microsoft.InternetBank.Domains.Investment.ETFTrustType,Microsoft.InternetBank.Domains.Investment.SimpleTypeForETF)">
+            <summary>
+            取得投資商品
+            </summary>
+            <param name="trustType">Type of the trust.</param>
+            <param name="theETFType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFTransactionService.Validate(Microsoft.InternetBank.Domains.Investment.BondTransaction)">
+            <summary>
+            送出前檢核
+            </summary>
+            <param name="purchaseOrder">The purchase order.</param>
+            <returns></returns>
+            <remarks>
+            1. 檢查限額
+            2. 檢查商品屬性是否符合投資人屬性
+            </remarks>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFTransactionService.QueryPrice(Microsoft.InternetBank.Domains.Investment.BondTransaction)">
+            <summary>
+            進行ETF詢價 (BDSUB)
+            </summary>
+            <param name="bondTransaction">ETF客戶購買資料</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFTransactionService.Submit(Microsoft.InternetBank.Domains.Investment.BondTransaction,Microsoft.InternetBank.Domains.Investment.BondPurchaseFee)">
+            <summary>
+            進行申購交易
+            </summary>
+            <param name="bondTransaction">ETF客戶購買資料</param>
+            <param name="fee">ETF詢價結果</param>
+            <returns>交易結果</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.ETFTransactionResult">
+            <summary>
+            ETF 交易結果
+            </summary>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.HandFeeRate">
+            <summary>
+            手續費率
+            </summary>
+            <value>
+            The hand fee rate.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.ExchangeRate">
+            <summary>
+            (圈存)匯率
+            </summary>
+            <value>
+            The exchage rate.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.ExpectedHandFee">
+            <summary>
+            預估手續費
+            </summary>
+            <value>
+            The expected hand fee.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.ExpectedHandFeeCurrency">
+            <summary>
+            預估手續費幣別
+            </summary>
+            <value>
+            The expected hand fee currency.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.NotionalTransactionFee">
+            <summary>
+            名目手續費
+            </summary>
+            <value>
+            The named hand fee.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.ExpectedPayAmount">
+            <summary>
+            預估收付金額
+            </summary>
+            <value>
+            The expected pay amount.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.ExpectedPayAmountCurrency">
+            <summary>
+            預估收付金額幣別
+            </summary>
+            <value>
+            The expected pay amount currency.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.EarmarkMultiple">
+            <summary>
+            圈存倍數
+            </summary>
+            <value>
+            The credit for load rate.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.ETFTransactionResult.EarmarkAmount">
+            <summary>
+            圈存金額
+            </summary>
+            <value>
+            The credit for load amount.
+            </value>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IETFRedemptionService">
+            <summary>
+            提供ETF贖回服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFRedemptionService.FetchInformation">
+            <summary>
+            取得可贖回的ETF資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFRedemptionService.FindInformation(System.String,System.String)">
+            <summary>
+            取得特定的ETF資訊
+            </summary>  
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFRedemptionService.QueryPrice(Microsoft.InternetBank.Domains.Investment.ETFOrderForRedemption)">
+            <summary>
+            詢價
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFRedemptionService.Submit(Microsoft.InternetBank.Domains.Investment.ETFOrderForRedemption)">
+            <summary>
+            訂單送出
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFRedemptionService.Validate(Microsoft.InternetBank.Domains.Investment.ETFOrderForRedemption)">
+            <summary>
+            驗證贖回交易資料
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IETFRedemptionService.TransactionReport(Microsoft.InternetBank.Domains.Investment.ETFOrderForRedemption,System.Decimal,System.String,System.Decimal)">
+            <summary>
+            交易報告
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IFundInvestDollarCostAveragingPlanChangeService">
+            <summary>
+            提供"基金定期定額異動"服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundInvestDollarCostAveragingPlanChangeService.QueryDollarCostAveragingPlanChangeItems">
+            <summary>
+            查詢 基金定期定額異動的項目
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundInvestDollarCostAveragingPlanChangeService.FindReservedModificationCondition(System.String,System.DateTime,System.String)">
+            <summary>
+            找出已預約修改條件, 根據<paramref name="trustNumber"/>,<paramref name="effectiveDate"/>和<paramref name="fundId"/>
+            </summary>
+            <param name="trustNumber">信託編號</param>
+            <param name="effectiveDate">交易日期</param>
+            <param name="fundId">基金代碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundInvestDollarCostAveragingPlanChangeService.GetFundChangeRecord(System.String)">
+            <summary>
+            取得基金更改紀錄
+            </summary>
+            <param name="trustNumber">信託編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundInvestDollarCostAveragingPlanChangeService.Validate(Microsoft.InternetBank.Domains.Investment.DollarCostAveragingModificationParameter)">
+            <summary>
+            驗證(檢核)基金定期定額異動的參數
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundInvestDollarCostAveragingPlanChangeService.Submit(Microsoft.InternetBank.Domains.Investment.DollarCostAveragingModificationParameter,System.String)">
+            <summary>
+            送出"基金定期定額異動"
+            </summary>
+            <param name="parameter">The parameter.</param>
+            <param name="password">理財密碼</param>
+            <returns>網銀交易序號</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IFundRedemptionService">
+            <summary>
+            提供基金贖回服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundRedemptionService.FetchInformation">
+            <summary>
+            取得可贖回的基金資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundRedemptionService.CheckExistingSameFundOrder(System.String,System.String)">
+            <summary>
+            確認相同信託編號是否已有預約贖回
+            </summary>
+            <param name="trustNumber">信託編號.</param>
+            <param name="fundId">The fund identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundRedemptionService.QueryPrice(Microsoft.InternetBank.Domains.Investment.FundOrderForRedemption)">
+            <summary>
+            基金贖回詢價
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundRedemptionService.Submit(Microsoft.InternetBank.Domains.Investment.FundOrderForRedemption)">
+            <summary>
+            基金贖回訂單送出
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IFundPurchasable">
+            <summary>
+            此介面提供購買基金的能力
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundPurchasable.Purchase(Microsoft.InternetBank.Domains.Investment.IFundOrderForPurchase,System.String)">
+            <summary>
+            基金申購
+            </summary>
+            <param name="fundOrder">The fund order.</param>
+            <param name="password">The password.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IFundTransferService">
+            <summary>
+            提供基金轉換服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundTransferService.FetchInformation">
+            <summary>
+            取得可轉換的基金資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundTransferService.CheckExistingSameFundOrder(System.String,System.String)">
+            <summary>
+            確認相同信託編號是否已有預約轉換
+            </summary>
+            <param name="trustNumber">信託編號.</param>
+            <param name="fundId">The fund identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundTransferService.FetchAllFundDataInGroup(System.String)">
+            <summary>
+            以集団顯示可轉換的基金
+            </summary>
+            <param name="fundId">The fund identifier.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundTransferService.FetchFeePayableAccounts">
+            <summary>
+            取得手續費扣款帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundTransferService.QueryPrice(Microsoft.InternetBank.Domains.Investment.FundOrderForTransfer)">
+            <summary>
+            基金轉換詢價 (TNSW2)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundTransferService.Validate(Microsoft.InternetBank.Domains.Investment.FundOrderForTransfer)">
+            <summary>
+            驗證轉換交易資料
+            </summary>
+            <param name="fundOrder">The fund order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IFundTransferService.Submit(Microsoft.InternetBank.Domains.Investment.FundOrderForTransfer,System.String)">
+            <summary>
+            進行轉換交易
+            </summary>
+            <param name="fundOrder">The fund order.</param>
+            <param name="financialPassword">The financial password.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService">
+            <summary>
+            提供投資理財的一般性服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.GetBusinessDateFor(System.DateTime)">
+            <summary>
+            根據<paramref name="input"/>取得營業日。
+            如果日期本身是營業日，則為日期本身，否則為下一營業日
+            </summary>
+            <param name="input">輸入日期</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.FetchBusinessDates(CommonDomain.TimePeriod)">
+            <summary>
+            針對日期區間範圍取得營業日
+            </summary>
+            <param name="period"></param>
+            <returns>
+            所有的營業日
+            </returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.ValidateTransactionTime(System.Boolean,System.Boolean)">
+            <summary>
+            檢核基金是否可以交易 (包括即時交易時段檢查及主機維護時間檢查)
+            </summary>
+            <param name="canTradeOnlyInOperationTime">是否為營業時間才可執行之交易</param>
+            <param name="canTradeInMaintenanceTime">主機維護時間是否能執行交易</param>
+            <returns>true: 可以交易; false: 不可交易</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.ValidateETFTransactionTime(System.Boolean,System.Boolean)">
+            <summary>
+            檢核ETF是否可以交易 (包括即時交易時段檢查及主機維護時間檢查)
+            </summary>
+            <param name="canTradeOnlyInOperationTime">是否為營業時間才可執行之交易</param>
+            <param name="canTradeInMaintenanceTime">主機維護時間是否能執行交易</param>
+            <returns>true: 可以交易; false: 不可交易</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.ValidateHongKongETFOpenTime">
+            <summary>
+            檢查是否為港股ETF交易時間
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.FindFundCompaniesBy(Microsoft.InternetBank.Domains.Investment.TrustBusinessType)">
+            <summary>
+            找出基金公司
+            </summary>
+            <param name="type">The type.</param>
+            <returns>Key: 基金公司代碼; Value: 基金(公司)名稱</returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.FindFundDescriptionsBy(Microsoft.InternetBank.Domains.Investment.TrustBusinessType,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            根據[信託業務類型]與[基金公司代碼]找出對應基金
+            </summary>
+            <param name="type">信託業務類型</param>
+            <param name="companyId">基金公司代碼.</param>
+            <param name="isLumpSum">是否為單筆申購</param>
+            <param name="isRealTime">是否為即時</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.FetchAccountBy(System.Boolean,System.Boolean,System.String)">
+            <summary>
+            根據[信託業務類型]與[是否台幣]與[是否為轉帳]取得可用帳號
+            </summary>        
+            <param name="isTaiwanDollar">if set to <c>true</c> [為台幣], 否則為外幣</param>
+            <param name="isPayable">if set to <c>true</c> [為扣款帳號], 否則為[贖回轉入帳號]</param>
+            <param name="transactionId">功能交易代號(PRID)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.QueryCustomerRisk(Microsoft.InternetBank.Domains.Investment.RiskQueryProductType)">
+            <summary>
+            進行KYC查詢及檢核
+            </summary>
+            <param name="type">客戶投資風險屬性的查詢類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.CheckCustomerRiskBy(System.String,System.String)">
+            <summary>
+            取得KYC 客戶風險等級結果
+            </summary>
+            <param name="fundCode">基金代碼</param>
+            <param name="plannerNumber">理專員編</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.GetFeeDisplay(System.String)">
+            <summary>
+            取得通路報酬揭露資料
+            </summary>
+            <param name="fundCode">基金代碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.GetBondPrice(System.String,System.DateTime,Microsoft.InternetBank.Domains.Investment.BondTransactionType)">
+            <summary>
+            取得債券價格
+            </summary>
+            <param name="bondId">The bond identifier.</param>
+            <param name="priceDate">The price date.</param>
+            <param name="transactionType">Type of the transaction.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.SaveCustomRiskResults(System.String,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            儲存自然人問卷結果
+            </summary>
+            <param name="doDate"></param>
+            <param name="question1Answer"></param>
+            <param name="question1Value"></param>
+            <param name="question2Answer"></param>
+            <param name="question2Value"></param>
+            <param name="question3Answer"></param>
+            <param name="question3Value"></param>
+            <param name="question4Answer"></param>
+            <param name="question4Value"></param>
+            <param name="question5Answer"></param>
+            <param name="question5Value"></param>
+            <param name="question6Answer"></param>
+            <param name="question6Value"></param>
+            <param name="question7Answer"></param>
+            <param name="question7Value"></param>
+            <param name="question8Answer"></param>
+            <param name="question8Value"></param>
+            <param name="question9Answer"></param>
+            <param name="question9Value"></param>
+            <param name="question10Answer"></param>
+            <param name="question10Value"></param>
+            <param name="question11Answer"></param>
+            <param name="question11Value"></param>
+            <param name="score"></param>
+            <param name="riskType"></param>
+            <param name="acceptFinancialDerivatives"></param>
+            <param name="jobType"></param>
+            <param name="jobTypeOther"></param>
+            <param name="occupationType"></param>
+            <param name="occupationTypeOther"></param>
+            <param name="income"></param>
+            <param name="incomeOther"></param>
+            <param name="soloType"></param>
+            <param name="assetType"></param>
+            <param name="handicapType"></param>
+            <param name="professionType"></param>
+            <param name="experienceType"></param>
+            <param name="isCompulsoryConservative"></param>
+            <param name="legalRepresentative"></param>
+            <param name="gender"></param>
+            <param name="birthday"></param>
+            <param name="marriageType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.SaveCompanyRiskResults(System.String,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            儲存法人問卷結果
+            </summary>
+            <param name="doDate"></param>
+            <param name="question1Answer"></param>
+            <param name="question1Value"></param>
+            <param name="question2Answer"></param>
+            <param name="question2Value"></param>
+            <param name="question3Answer"></param>
+            <param name="question3Value"></param>
+            <param name="question4Answer"></param>
+            <param name="question4Value"></param>
+            <param name="question5Answer"></param>
+            <param name="question5Value"></param>
+            <param name="question6Answer"></param>
+            <param name="question6Value"></param>
+            <param name="question7Answer"></param>
+            <param name="question7Value"></param>
+            <param name="question8Answer"></param>
+            <param name="question8Value"></param>
+            <param name="question9Answer"></param>
+            <param name="question9Value"></param>
+            <param name="question10Answer"></param>
+            <param name="question10Value"></param>
+            <param name="question11Answer"></param>
+            <param name="question11Value"></param>
+            <param name="score"></param>
+            <param name="riskType"></param>
+            <param name="acceptFinancialDerivatives"></param>
+            <param name="companyType"></param>
+            <param name="duringEstablishment"></param>
+            <param name="companyAssets"></param>
+            <param name="bankAmount"></param>
+            <param name="isCompulsoryConservative"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.QueryCustomProfessionType">
+            <summary>
+            取得客戶是否專業經理人資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentCommonService.QueryUserRiskProfilingQuestionnaireType">
+            <summary>
+            查詢 OBU 是否為公司戶
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.InvestmentTransactionId">
+            <summary>
+            投資類功能交易識別代碼
+            </summary>
+        </member>
+        <member name="F:Microsoft.InternetBank.Services.Investment.InvestmentTransactionId.PurchaseLumpSum">
+            <summary>
+            基金單筆申購
+            </summary>
+        </member>
+        <member name="F:Microsoft.InternetBank.Services.Investment.InvestmentTransactionId.PurchaseDollarCostAveraging">
+            <summary>
+            基金定期定額
+            </summary>
+        </member>
+        <member name="F:Microsoft.InternetBank.Services.Investment.InvestmentTransactionId.PurchaseETF">
+            <summary>
+            ETF申購
+            </summary>
+        </member>
+        <member name="F:Microsoft.InternetBank.Services.Investment.InvestmentTransactionId.FundTransfer">
+            <summary>
+            基金轉換
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService">
+            <summary>
+            提供投資交易服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.QueryPrice(Microsoft.InternetBank.Domains.Investment.FundPriceQueryParameter)">
+            <summary>
+            基金詢價
+            </summary>
+            <param name="parameter">The parameter.</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.ShowMinimumFundAmount(Microsoft.InternetBank.Domains.Investment.TrustBusinessType,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            根據[信託業務類型]與[基金代碼]顯示最低投資金額
+            </summary>
+            <param name="type">信託業務類型.</param>
+            <param name="fundDataType"><see cref="T:Microsoft.InternetBank.Domains.FundDescription"/> 的key之一</param>
+            <param name="fundCorpCode">基金公司代碼, <see cref="T:Microsoft.InternetBank.Domains.FundDescription"/>的key之二</param>
+            <param name="fundCode">基金代碼, <see cref="T:Microsoft.InternetBank.Domains.FundDescription"/>的key之三</param>
+            <param name="currencyCode">當[外幣投資海外基金]時, 請傳入幣別</param>
+            <param name="isPeriod">是否為定期定額</param>
+            <returns>
+            數值組合, value1: 幣別, value2: 金額
+            </returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.CheckFundMinimum(Microsoft.InternetBank.Domains.Investment.TrustBusinessType,System.String,System.String,System.String,System.Decimal,System.Boolean)">
+            <summary>
+            檢查申購時的上下限額
+            </summary>
+            <param name="type">The type.</param>
+            <param name="fundDataType"><see cref="T:Microsoft.InternetBank.Domains.FundDescription"/>的key之一</param>
+            <param name="fundCorpCode">基金公司代碼, <see cref="T:Microsoft.InternetBank.Domains.FundDescription"/>的key之二</param>
+            <param name="fundCode">基金代碼, <see cref="T:Microsoft.InternetBank.Domains.FundDescription"/>的key之三</param>
+            <param name="amount">The amount.</param>
+            <param name="isLumpSum">是否為單筆申購</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.Validate(Microsoft.InternetBank.Domains.Investment.IFundOrderForPurchase)">
+            <summary>
+            檢核基金申購單
+            </summary>
+            <param name="purchasingOrder">The fund order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.Submit(Microsoft.InternetBank.Domains.Investment.IFundOrderForPurchase,System.String)">
+            <summary>
+            申購(單筆\定期定額)基金  
+            </summary>
+            <param name="fundOrder">The fund order.</param>
+            <param name="financialPassword">理財密碼</param>
+            <returns>交易序號</returns>
+            <remarks>可預約或即時</remarks>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.FetchFundOrderBy(Microsoft.InternetBank.Domains.Investment.QueryRangeType,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            依設定(預約)日或交易日查詢
+            </summary>
+            <param name="type">The type.</param>
+            <param name="period">The period.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.FetchFundOrderByTest(Microsoft.InternetBank.Domains.Investment.QueryRangeType,System.DateTime,System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            取得基金訂單(test for WCF client)
+            </summary>
+            <param name="type">The type.</param>
+            <param name="beginDate">The begin date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IInvestmentTransactionService.CancelReservation(System.Int32,System.String)">
+            <summary>
+            預約交易取消
+            </summary>
+            <param name="sequenceNumber">交易序號</param>
+            <param name="password">交易密碼</param>
+            <returns>送信是否成功</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.FundTransactionResult">
+            <summary>
+            基金交易結果
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.FundTransactionResult.CreateInstance(System.String,System.Nullable{System.Decimal},System.String,System.Boolean)">
+            <summary>
+            Creates the instance of <see cref="T:Microsoft.InternetBank.Services.Investment.FundTransactionResult"/>.
+            </summary>
+            <param name="serialNumber">The serial number.</param>
+            <param name="fee">The fee.</param>
+            <param name="trustNumber">The trust number.</param>
+            <param name="isEmailSuccess">if set to <c>true</c> [is email success].</param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.FundTransactionResult.SerialNumber">
+            <summary>
+            交易序號
+            </summary>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.FundTransactionResult.Fee">
+            <summary>
+            手續費
+            </summary>
+            <value>
+            The fee.
+            </value>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.FundTransactionResult.TrustNumber">
+            <summary>
+            信託編號
+            </summary>
+        </member>
+        <member name="P:Microsoft.InternetBank.Services.Investment.FundTransactionResult.IsEmailSuccess">
+            <summary>
+            email寄送是否成功
+            </summary>
+            <value>
+            <c>true</c> if this instance is mail sent success; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IQueryBondSummaryService">
+            <summary>
+            提供債券投資概要查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryBondSummaryService.FetchBondInvestmentSummary">
+            <summary>
+            Fetch Bond Investment Summary
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryBondSummaryService.FindBondInvestmentItemInfo(System.String,System.String)">
+            <summary>
+            Find Bond Investment Item Info
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IQueryDualCurrencyInvestSummaryService">
+            <summary>
+            提供雙元貨幣投資概要查詢服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryDualCurrencyInvestSummaryService.FindBy">
+            <summary>
+            根據使用者帳戶或統一編號找出相關雙元貨幣投資概要資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IQueryETFSummaryService">
+            <summary>
+            ETF 投資概要服務查詢服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryETFSummaryService.FindNoteTotalAssetBy">
+            <summary>
+            取得 ETF 投資概要總資產
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryETFSummaryService.FindInvestmentSummaryBy">
+            <summary>
+            取得 ETF 投資概要歸戶查詢
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryETFSummaryService.FindInvestmentResultBy(System.String,System.String)">
+            <summary>
+            取得 ETF 投資概要投資明細
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IQueryInvestmentDetailService">
+            <summary>
+            提供投資明細查詢服務.
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryInvestmentDetailService.FetchFundTransactionResult(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Fetches the fund transaction result.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="ensureFresh">if set to <c>true</c> [ensure fresh].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryInvestmentDetailService.FetchBondTransactionResult(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Fetches the bond transaction result.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="ensureFresh">if set to <c>true</c> [ensure fresh].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryInvestmentDetailService.FetchETFTransactionResult(System.DateTime,System.DateTime,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Fetches the etf transaction result.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="pageSize">Size of the page.</param>
+            <param name="ensureFresh">if set to <c>true</c> [ensure fresh].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryInvestmentDetailService.FetchFundTransactionResultItems(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Fetches the fund transaction result items.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="trustNumber">The trust number.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryInvestmentDetailService.FetchBondTransactionResultItems(System.DateTime,System.DateTime,System.DateTime,System.String,System.String,System.String,System.String)">
+            <summary>
+            Fetches the bond transaction result items.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="transactionDate">The transaction date.</param>
+            <param name="transactionType">Type of the transaction.</param>
+            <param name="bondCode">The bond code.</param>
+            <param name="trustNumber">The trust number.</param>
+            <param name="transactionTime">The transaction time.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryInvestmentDetailService.FetchETFTransactionResultItems(System.DateTime,System.DateTime,System.DateTime,System.String,System.String,System.String,System.String)">
+            <summary>
+            Fetches the etf transaction result items.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="transactionDate">The transaction date.</param>
+            <param name="transactionType">Type of the transaction.</param>
+            <param name="bondCode">The bond code.</param>
+            <param name="trustNumber">The trust number.</param>
+            <param name="transactionTime">The transaction time.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IQueryStructureProductSummaryService">
+            <summary>
+            提供組合式商品投資概要服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryStructureProductSummaryService.FindBy">
+            <summary>
+            根據使用者帳戶或統一編號找出相關組合式商品投資概要資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.Investment.IQueryFundSummaryService">
+            <summary>
+            提供基金投資概要查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryFundSummaryService.FetchAllTotalBy(Microsoft.InternetBank.Domains.Investment.FundInvestmentType)">
+            <summary>
+            根據<paramref name="type"/>取得總計
+            </summary>
+            <param name="type">基金投資種類</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryFundSummaryService.FetchAllItemsBy(Microsoft.InternetBank.Domains.Investment.TrustType)">
+            <summary>
+            根據不同的<paramref name="type"/>取得對應的投資概要項目
+            </summary>
+            <param name="type">信託型態</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryFundSummaryService.FindDetail(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            查詢基金投資明細
+            </summary>
+            <param name="trustNumber">信託編號</param>
+            <param name="fundCode">基金代碼</param>
+            <param name="startIndex">起始索引</param>
+            <param name="pageSize">分頁大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryFundSummaryService.FetchFundEfficientInvestmentTotalAssets">
+            <summary>
+            取得基動配置投資法-總資產明細
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.Investment.IQueryFundSummaryService.FindFundEfficiencyInvestmentSummaryDetail(System.String)">
+            <summary>
+            取得基動配置投資法-子母基金明細
+            </summary>
+            <param name="trustNumber">信託編號</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.IWebFoundationService">
+            <summary>
+            提供網站基礎框架服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.FetchAllMenuItems">
+            <summary>
+            取得所有的網站菜單選項
+            </summary>
+            <returns>
+            所有的網站菜單選項, 可組成Hierarchy結構
+            </returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.FetchAllBookmarksForOwner">
+            <summary>
+            取得使用者的所有書籤
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.AddBookmark(System.Guid)">
+            <summary>
+            加入我的最愛
+            </summary>
+            <param name="menuId">The menu identifier.</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.AddBookmark(System.String)">
+            <summary>
+            加入我的最愛
+            </summary>
+            <param name="controllerPath">The controller path.</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.RemoveBookmark(System.String)">
+            <summary>
+            移除我的最愛
+            </summary>
+            <param name="controllerPath">The controller path.</param>        
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.RemoveBookmark(System.Guid)">
+            <summary>
+            移除我的最愛
+            </summary>
+            <param name="menuId">The menu identifier.</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.FetchAllControllerAuthenticationModes">
+            <summary>
+            取得所有controller對應到的驗證模式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.FetchAuthenticationMode(System.String)">
+            <summary>
+            根據 <paramref name="controllerName"/> 取得對應的驗證模式.
+            </summary>
+            <param name="controllerName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.FindCurrentModuleSettings">
+            <summary>
+            找出目前的功能模組設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.IWebFoundationService.SiteState">
+            <summary>
+            網站服務狀態
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService">
+            <summary>
+            基金/ETF停損通知設定
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.GetFundSetting">
+            <summary>
+             查詢客戶設定的基金停損停利資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.GetFundStock">
+            <summary>
+             查詢客戶基金庫存資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.GetAllFundSettingItems">
+            <summary>
+            取得所有基金資料(包含設定過及未設定過)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.GetETFSetting">
+            <summary>
+            查詢客戶設定的ETF停損停利資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.GetETFStock">
+            <summary>
+             查詢客戶ETF庫存資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.GetAllETFSettingItems">
+            <summary>
+            取得所有ETF資料(包含設定過及未設定過)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.AddRecord(System.String,System.String,System.String,System.String)">
+            <summary>
+            新增客戶停損停利資料
+            </summary>
+            <param name="trustNumber"></param>
+            <param name="productId"></param>
+            <param name="newLost"></param>
+            <param name="newProfit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.DeleteRecord(System.String,System.String)">
+            <summary>
+            刪除客戶停損停利資料
+            </summary>
+            <param name="trustNumber"></param>
+            <param name="productId"></param>
+            <param name="newLost"></param>
+            <param name="newProfit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IFundETFProfitGainLossNotificationSettingsService.UpdateRecord(System.String,System.String,System.String,System.String)">
+            <summary>
+            更新客戶停損停利資料
+            </summary>
+            <param name="trustNumber"></param>
+            <param name="productId"></param>
+            <param name="newLost"></param>
+            <param name="newProfit"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IInstantAlertReminderSettingsService">
+            <summary>
+            即時警示提醒設定
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IInstantAlertReminderSettingsService.CountForNonAppointmentTransfer(Microsoft.InternetBank.Services.PersonalSetting.CountType,System.Decimal)">
+            <summary>
+            非約定轉帳計數
+            </summary>
+            <param name="countType">增加或減少</param>
+            <param name="amount">金額</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IInstantAlertReminderSettingsService.CountForAppointmentTransfer(Microsoft.InternetBank.Services.PersonalSetting.CountType,System.Decimal)">
+            <summary>
+            約定轉帳計數
+            </summary>
+            <param name="countType">增加或減少</param>
+            <param name="amount">金額</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IInstantAlertReminderSettingsService.FindBy">
+            <summary>
+            查詢即時警示提醒設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IInstantAlertReminderSettingsService.Update(Microsoft.InternetBank.Services.SecurityTokenIssueProvider.InstantAlertReminderSettings)">
+            <summary>
+            更新即時警示提醒設定
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.CountType">
+            <summary>
+            計數類型
+            </summary>
+        </member>
+        <member name="F:Microsoft.InternetBank.Services.PersonalSetting.CountType.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:Microsoft.InternetBank.Services.PersonalSetting.CountType.Increase">
+            <summary>
+            增加
+            </summary>
+        </member>
+        <member name="F:Microsoft.InternetBank.Services.PersonalSetting.CountType.Decrease">
+            <summary>
+            減少
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.ITrustAllNotificationSettingsService">
+            <summary>
+            信託各項通知設定服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.ITrustAllNotificationSettingsService.GetSettings">
+            <summary>
+            取得目前設定資料
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.ITrustAllNotificationSettingsService.UpdateSettings(Microsoft.InternetBank.Domains.PersonalSetting.FundNoticeMailSettings)">
+            <summary>
+            更新設定資料
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IApplyBankcardService">
+            <summary>
+            金融卡申請服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IApplyBankcardService.FetchAccounts">
+            <summary>
+            取得使用者帳戶
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IApplyBankcardService.ApplyBankcard(System.String)">
+            <summary> 
+            申請金融卡
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.ICommonUsedAccountSettingsService">
+            <summary>
+            常用帳號及暱稱設定服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.ICommonUsedAccountSettingsService.FetchBanks">
+            <summary>
+            取得所有銀行資料
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.ICommonUsedAccountSettingsService.UpdateAccountAliasForAccountUsage(System.String,System.String)">
+            <summary>
+            更新本人帳號暱稱
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.ICommonUsedAccountSettingsService.UpdateAppointedAccount(System.String,Microsoft.InternetBank.Domains.AppointedAccount)">
+            <summary>
+            更新約定轉入帳號
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.ICommonUsedAccountSettingsService.AddOrUpdateCommonUsedAccount(Microsoft.InternetBank.Domains.CommonUsedAccount)">
+            <summary>
+            新增或更新常用轉入帳號
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.ICommonUsedAccountSettingsService.DeleteCommonUsedAccount(Microsoft.InternetBank.Domains.CommonUsedAccount)">
+            <summary>
+            刪除常用轉入帳號
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IElectronicBillService">
+            <summary>
+            電子對帳單服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IElectronicBillService.GetElectronicBillSetting">
+            <summary>
+            取得電子月結單設定
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IElectronicBillService.SubmitElectronicBillSetting(Microsoft.InternetBank.Domains.PersonalSetting.ElectronicBillSetting)">
+            <summary>
+            提交電子月結單設定
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IElectronicBillService.GetCreditCardBillSetting">
+            <summary>
+            取得信用卡帳單設定
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IElectronicBillService.SubmitCreditCardBillSetting(Microsoft.InternetBank.Domains.PersonalSetting.CreditCardBillSetting)">
+            <summary>
+            提交信用卡帳單設定
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IReportLossNormalService">
+            <summary>
+            一般掛失
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IReportLossNormalService.FetchAccounts">
+            <summary>
+            取得使用者帳戶
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IReportLossNormalService.ReportLossNormal(System.String,System.String)">
+            <summary> 
+            進行掛失
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IMobileBankingSettingsService">
+            <summary>
+            行動網銀服務設定
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IMobileBankingSettingsService.GetRegisterOrNot">
+            <summary>
+            檢查是否已申請行銀啟用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IMobileBankingSettingsService.GetEnableOrDisable">
+            <summary>
+            打DB取得啟用或停用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IMobileBankingSettingsService.ExecuteBy(System.Boolean,System.String,System.Boolean)">
+            <summary>
+            本行行動網銀啟用/終止(供網銀行銀查詢)
+            </summary>
+            <returns>主機交易序號</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IReportLossTermDepositCertificateService">
+            <summary>
+            存單掛失
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IReportLossTermDepositCertificateService.GetTermDepositDetail(System.String)">
+            <summary>
+            取得存單資料
+            </summary>
+            <param name="depositAccount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IReportLossTermDepositCertificateService.SubmitDepositLoss(System.String,System.String,System.Decimal)">
+            <summary>
+            執行存單掛失
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IPasswordChangeService">
+            <summary>
+            密碼變更服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPasswordChangeService.PasswordChange(Microsoft.InternetBank.Domains.PersonalSetting.PasswordChangeRequest)">
+            <summary>
+            密碼變更
+            </summary>
+            <param name="passwordChangeConditions"></param>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService">
+            <summary>
+            個人資料維護服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService.ValidExecutePushOTP">
+            <summary>
+            驗證使用者是否可以執行IDG
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService.QueryPersonalInformation">
+            <summary>
+            查詢個人資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService.QueryCustomerInformation">
+            <summary>
+            查詢個人資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService.PersonalSetting(Microsoft.InternetBank.Domains.PersonalSetting.MaintainPersonalInformationRequest)">
+            <summary>
+            設定個人資訊
+            </summary>
+            <param name="maintainPersonalInformationRequest"></param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService.PushOTP(Microsoft.InternetBank.Domains.PersonalSetting.MaintainPersonalInformationRequest)">
+            <summary>
+            開啟驗證需求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService.IsExecutePersonalSetting">
+            <summary>
+            是否需要進行個人設定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.PersonalSetting.IPersonalSettingService.UpdatePersonalInformationSettingDate">
+            <summary>
+            更新個人設定最後時間
+            </summary>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.TermDeposit.ICalculatorTerminateTermDepositInterestService">
+            <summary>
+            定存中途解約利息試算服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ICalculatorTerminateTermDepositInterestService.FetchAccount">
+            <summary>
+            取得定存帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ICalculatorTerminateTermDepositInterestService.FetchTaiwanDollarDepositReceiptsDetailBy(System.String,System.Int32,System.Int32)">
+            <summary>
+            台幣存單資料取得
+            </summary>
+            <param name="depositAccount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ICalculatorTerminateTermDepositInterestService.FetchTaiwanDollarDepositReceiptTerminationBy(System.String,System.DateTime)">
+            <summary>
+            台幣定存中途解約利息試算
+            </summary>
+            <param name="depositReceiptsNumber"></param>
+            <param name="freeDate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService">
+            <summary>
+            綜存轉定存服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService.ValidateTransactionTime">
+            <summary>
+            判斷是否可進行外幣交易
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService.FetchAccounts">
+            <summary>
+            取得台外幣帳號且可轉帳並幣別非土耳其或墨西哥
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService.GetExchangeRateForUnitedStatesDollarBy(System.String)">
+            <summary>
+            根據幣別取得美金匯率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService.GetInterestRateBy(System.String,Microsoft.InternetBank.Domains.TermDeposit.TermCode,System.Int32)">
+            <summary>
+            根據條件取得外幣定存匯率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService.ExecuteBy(Microsoft.InternetBank.Domains.TermDeposit.ForeignCurrencyInvestTermDepositRequest)">
+            <summary>
+            外幣綜存轉定存
+            </summary>
+            <param name="foreignCurrencyTermDepositRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService.QueryStartInterestDateForDeposit(Microsoft.InternetBank.Domains.TermDeposit.QueryStartInterestDateForDepositRequest)">
+            <summary>
+            網銀定存起息日查詢交易
+            </summary>
+            <param name="queryStartInterestDateForDepositRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IInvestTermDepositService.ExecuteBy(Microsoft.InternetBank.Domains.TermDeposit.TaiwanDollarInvestTermDepositRequest)">
+            <summary>
+            台幣綜存轉定存執行
+            </summary>
+            <param name="taiwanDollarInvestTermDepositRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService">
+            <summary>
+            提供定存單/領息紀錄明細查詢服務
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.FetchAccounts">
+            <summary>
+            取得定存帳戶資料, 包括外幣和台幣.
+            </summary>        
+            <returns>
+            定存帳戶資料(可能會附加錯誤資訊)
+            </returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.FetchTaiwanDollarTermDepositDetails(System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            取得台幣定存存單明細
+            </summary>
+            <param name="accountNumber"></param>
+            <param name="period"></param>
+            <param name="index"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.FetchForeignExchangeTermDepositDetails(System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            取得外幣定存存單明細
+            </summary>
+            <param name="accountNumber"></param>
+            <param name="period"></param>
+            <param name="index"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.FetchForeignExchangeTermDepositDetails(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得外幣定存存單明細
+            </summary>
+            <param name="accountNumber"></param>
+            <param name="index"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.FetchInterestRecords(System.String,CommonDomain.TimePeriod,System.Int32,System.Int32)">
+            <summary>
+            根據<paramref name="receiptNumber"/>取得繳款領息記錄
+            </summary>
+            <param name="receiptNumber">存單號碼</param>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.CalculateSurrenderDepositInterestForForeignCurrency(System.String)">
+            <summary>
+            根據<paramref name="receiptNumber"/>外幣定存單解約試算
+            </summary>
+            <param name="receiptNumber">存單號碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.CalculateSurrenderDepositInterest(System.String,System.Decimal,CommonDomain.TimePeriod)">
+            <summary>
+            根據<paramref name="receiptNumber"/>台幣定存單解約\解借試算
+            </summary>
+            <param name="receiptNumber">存單號碼</param>
+            <param name="overdraftAmount">解借金額</param>
+            <param name="period">解借區間</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.FetchForeignExchangeAccountNotIncludeClean">
+            <summary>
+            取得非結清外幣帳戶資料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.IQueryTermDepositService.TermDepositInterestAnalysisCalculate(Microsoft.InternetBank.Domains.TermDeposit.InterestOfTermDeposit)">
+            <summary>
+            台幣定期存款利息分析試算
+            </summary>
+            <param name="value">定存利息試算參數</param>
+            <returns>N1480</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService">
+            <summary>
+            綜定中途解約服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.ValidateForTaiwanDollar">
+            <summary>
+            檢核是否可進行交易(台幣)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.ValidateForForeignCurrency">
+            <summary>
+            檢核是否可進行交易(外幣)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.FetchAccounts">
+            <summary>
+            取得綜存帳號(台/外幣)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.GetTermDepositList(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得定存單清單
+            </summary>
+            <param name="depositAccount">定存帳號</param>
+            <param name="startIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.GetTerminateTermDepositPayableForTaiwanDollar(System.String)">
+            <summary>
+            綜定存單中途解約應付息(台幣)
+            </summary>
+            <param name="depositReceiptsNumber">定存單號碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.ExecuteTerminateTermDepositForTaiwanDollar(Microsoft.InternetBank.Domains.TermDeposit.TerminateTermDepositParameterForTaiwanDollar)">
+            <summary>
+            執行綜定存單中途解約(台幣)
+            </summary>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.FetchForeignExchangeTermDepositDetails(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            取得外幣定存存單明細
+            </summary>
+            <param name="accountNumber">綜存帳號</param>
+            <param name="currencyCode">帳號幣別</param>
+            <param name="index"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.CalculateSurrenderDepositInterestForForeignCurrency(System.String)">
+            <summary>
+            根據<paramref name="depositReceiptsNumber"/>外幣定存單解約試算
+            </summary>
+            <param name="depositReceiptsNumber">存單號碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.ExecuteTerminateTermDepositForForeignCurrency(System.String,System.String,System.String,System.String,System.Decimal)">
+            <summary>
+            執行綜定存單中途解約(外幣)
+            </summary>
+            <param name="depositReceiptsNumber">存單號碼</param>
+            <param name="password">轉帳密碼</param>
+            <param name="depositAccount">轉帳密碼</param>
+            <param name="sequenceNumber">NF220查詢序號</param>
+            <param name="terminateAmount">NF220解約金額</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITerminateTermDepositService.FetchReport(System.Guid)">
+            <summary>
+            顯示水單
+            </summary>
+            <param name="memoId">水單ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.TermDeposit.ITermDepositTermChangeService">
+            <summary>
+            存單約定事項變更服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITermDepositTermChangeService.GetTermDepositList(System.String,System.Int32,System.Int32)">
+            <summary>
+            取得定存單清單
+            </summary>
+            <param name="depositAccount">定存帳號</param>
+            <param name="startIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITermDepositTermChangeService.GetTermDepositDetail(System.String,System.String)">
+            <summary>
+            取得定存單明細
+            </summary>
+            <param name="depositAccount">定存帳號</param>
+            <param name="depositReceiptsNumber">存單號碼</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITermDepositTermChangeService.Execute(Microsoft.InternetBank.Domains.TermDeposit.TermDepositTermChangeParameter)">
+            <summary>
+            執行變更
+            </summary>
+            <param name="parameter">存單約定事項變更參數</param>
+            <returns>主機交易序號</returns>
+        </member>
+        <member name="T:Microsoft.InternetBank.Services.TermDeposit.ITermDepositAutoRenewalApplyService">
+            <summary>
+            存單自動續存申請服務介面
+            </summary>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITermDepositAutoRenewalApplyService.FetchTermDeposit(System.String,System.Int32,System.Int32)">
+            <summary>
+            存單資料
+            </summary>
+            <param name="depositAccount">定存帳號</param>
+            <param name="startIndex">定存帳號</param>
+            <param name="pageSize">定存帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.InternetBank.Services.TermDeposit.ITermDepositAutoRenewalApplyService.Apply(Microsoft.InternetBank.Domains.TermDeposit.TermDepositAutoRenewalApplyParameter)">
+            <summary>
+            執行申請
+            </summary>
+            <param name="parameter">N6421台幣存單自動續存申請-II</param>
+            <returns>主機交易序號</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="30814a4d-3f28-4933-b799-8c7e0f80614e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QueryAccountSummaryService.xsd" MetadataType="Schema" ID="cead2b98-fc81-48dd-a40b-261da1629135" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="QueryAccountSummaryService1.xsd" MetadataType="Schema" ID="56989959-0412-4f5b-b383-362eea611622" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd3" />
+    <MetadataFile FileName="QueryAccountSummaryService2.xsd" MetadataType="Schema" ID="1f5a1278-c71d-47c0-b6a9-2d03c84ab079" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="QueryAccountSummaryService3.xsd" MetadataType="Schema" ID="ce3952e7-23ae-4c09-85e9-44edcab6cddb" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QueryAccountSummaryService.disco" MetadataType="Disco" ID="23818f54-aa64-4adc-a534-871862277e5a" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?disco" />
+    <MetadataFile FileName="QueryAccountSummaryService.wsdl" MetadataType="Wsdl" ID="aa6cd53b-f97b-452b-af86-03f0e1f1fc5b" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?wsdl" />
+    <MetadataFile FileName="QueryAccountSummaryService4.xsd" MetadataType="Schema" ID="0df09d30-8e71-4664-b605-320f51d848c8" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd6" />
+    <MetadataFile FileName="QueryAccountSummaryService5.xsd" MetadataType="Schema" ID="1305945f-70a8-4d2b-a762-c387c9fbed4d" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd5" />
+    <MetadataFile FileName="QueryAccountSummaryService6.xsd" MetadataType="Schema" ID="a53984c3-a837-4747-a9a5-cb370c422b2d" SourceId="1" SourceUrl="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

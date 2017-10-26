@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QueryAccountSummaryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IQueryAccountSummaryService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd4" />
+      <xsd:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.AccountQuery" />
+      <xsd:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains" />
+      <xsd:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Investment" />
+      <xsd:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Loan" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTotalSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchTotalSummary" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTotalSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchTotalSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTotalSummary_EnterpriseApplicationIntegrationError_FaultMessage">
+    <wsdl:part name="detail" element="EnterpriseApplicationIntegrationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTotalSummary_ExternalSystemError_FaultMessage">
+    <wsdl:part name="detail" element="ExternalSystemError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTotalSummary_ValidationError_FaultMessage">
+    <wsdl:part name="detail" element="ValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTotalSummary_GeneralError_FaultMessage">
+    <wsdl:part name="detail" element="GeneralError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTaiwanDollarAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchTaiwanDollarAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTaiwanDollarAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchTaiwanDollarAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTaiwanDollarAccounts_EnterpriseApplicationIntegrationError_FaultMessage">
+    <wsdl:part name="detail" element="EnterpriseApplicationIntegrationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTaiwanDollarAccounts_ExternalSystemError_FaultMessage">
+    <wsdl:part name="detail" element="ExternalSystemError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTaiwanDollarAccounts_ValidationError_FaultMessage">
+    <wsdl:part name="detail" element="ValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchTaiwanDollarAccounts_GeneralError_FaultMessage">
+    <wsdl:part name="detail" element="GeneralError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchForeignExchangeAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchForeignExchangeAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchForeignExchangeAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchForeignExchangeAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchForeignExchangeAccounts_EnterpriseApplicationIntegrationError_FaultMessage">
+    <wsdl:part name="detail" element="EnterpriseApplicationIntegrationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchForeignExchangeAccounts_ExternalSystemError_FaultMessage">
+    <wsdl:part name="detail" element="ExternalSystemError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchForeignExchangeAccounts_ValidationError_FaultMessage">
+    <wsdl:part name="detail" element="ValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchForeignExchangeAccounts_GeneralError_FaultMessage">
+    <wsdl:part name="detail" element="GeneralError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchAuthorizationAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchAuthorizationAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchAuthorizationAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchAuthorizationAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchAuthorizationAccounts_EnterpriseApplicationIntegrationError_FaultMessage">
+    <wsdl:part name="detail" element="EnterpriseApplicationIntegrationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchAuthorizationAccounts_ExternalSystemError_FaultMessage">
+    <wsdl:part name="detail" element="ExternalSystemError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchAuthorizationAccounts_ValidationError_FaultMessage">
+    <wsdl:part name="detail" element="ValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchAuthorizationAccounts_GeneralError_FaultMessage">
+    <wsdl:part name="detail" element="GeneralError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchFundInvestmentItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchFundInvestmentItems" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchFundInvestmentItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchFundInvestmentItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchFundInvestmentItems_EnterpriseApplicationIntegrationError_FaultMessage">
+    <wsdl:part name="detail" element="EnterpriseApplicationIntegrationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchFundInvestmentItems_ExternalSystemError_FaultMessage">
+    <wsdl:part name="detail" element="ExternalSystemError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchFundInvestmentItems_ValidationError_FaultMessage">
+    <wsdl:part name="detail" element="ValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchFundInvestmentItems_GeneralError_FaultMessage">
+    <wsdl:part name="detail" element="GeneralError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchLoanAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:FetchLoanAccounts" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchLoanAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FetchLoanAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchLoanAccounts_EnterpriseApplicationIntegrationError_FaultMessage">
+    <wsdl:part name="detail" element="EnterpriseApplicationIntegrationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchLoanAccounts_ExternalSystemError_FaultMessage">
+    <wsdl:part name="detail" element="ExternalSystemError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchLoanAccounts_ValidationError_FaultMessage">
+    <wsdl:part name="detail" element="ValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_FetchLoanAccounts_GeneralError_FaultMessage">
+    <wsdl:part name="detail" element="GeneralError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_QueryCreditCardSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCreditCardSummary" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_QueryCreditCardSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryCreditCardSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_QueryCreditCardSummary_EnterpriseApplicationIntegrationError_FaultMessage">
+    <wsdl:part name="detail" element="EnterpriseApplicationIntegrationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_QueryCreditCardSummary_ExternalSystemError_FaultMessage">
+    <wsdl:part name="detail" element="ExternalSystemError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_QueryCreditCardSummary_ValidationError_FaultMessage">
+    <wsdl:part name="detail" element="ValidationError" />
+  </wsdl:message>
+  <wsdl:message name="IQueryAccountSummaryService_QueryCreditCardSummary_GeneralError_FaultMessage">
+    <wsdl:part name="detail" element="GeneralError" />
+  </wsdl:message>
+  <wsdl:portType name="IQueryAccountSummaryService">
+    <wsdl:operation name="FetchTotalSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchTotalSummary" message="tns:IQueryAccountSummaryService_FetchTotalSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchTotalSummaryResponse" message="tns:IQueryAccountSummaryService_FetchTotalSummary_OutputMessage" />
+      <wsdl:fault wsaw:Action="EAI operation" name="EnterpriseApplicationIntegrationError" message="tns:IQueryAccountSummaryService_FetchTotalSummary_EnterpriseApplicationIntegrationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="External system call" name="ExternalSystemError" message="tns:IQueryAccountSummaryService_FetchTotalSummary_ExternalSystemError_FaultMessage" />
+      <wsdl:fault wsaw:Action="Validation" name="ValidationError" message="tns:IQueryAccountSummaryService_FetchTotalSummary_ValidationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="GeneralError" name="GeneralError" message="tns:IQueryAccountSummaryService_FetchTotalSummary_GeneralError_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchTaiwanDollarAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchTaiwanDollarAccounts" message="tns:IQueryAccountSummaryService_FetchTaiwanDollarAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchTaiwanDollarAccountsResponse" message="tns:IQueryAccountSummaryService_FetchTaiwanDollarAccounts_OutputMessage" />
+      <wsdl:fault wsaw:Action="EAI operation" name="EnterpriseApplicationIntegrationError" message="tns:IQueryAccountSummaryService_FetchTaiwanDollarAccounts_EnterpriseApplicationIntegrationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="External system call" name="ExternalSystemError" message="tns:IQueryAccountSummaryService_FetchTaiwanDollarAccounts_ExternalSystemError_FaultMessage" />
+      <wsdl:fault wsaw:Action="Validation" name="ValidationError" message="tns:IQueryAccountSummaryService_FetchTaiwanDollarAccounts_ValidationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="GeneralError" name="GeneralError" message="tns:IQueryAccountSummaryService_FetchTaiwanDollarAccounts_GeneralError_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchForeignExchangeAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchForeignExchangeAccounts" message="tns:IQueryAccountSummaryService_FetchForeignExchangeAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchForeignExchangeAccountsResponse" message="tns:IQueryAccountSummaryService_FetchForeignExchangeAccounts_OutputMessage" />
+      <wsdl:fault wsaw:Action="EAI operation" name="EnterpriseApplicationIntegrationError" message="tns:IQueryAccountSummaryService_FetchForeignExchangeAccounts_EnterpriseApplicationIntegrationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="External system call" name="ExternalSystemError" message="tns:IQueryAccountSummaryService_FetchForeignExchangeAccounts_ExternalSystemError_FaultMessage" />
+      <wsdl:fault wsaw:Action="Validation" name="ValidationError" message="tns:IQueryAccountSummaryService_FetchForeignExchangeAccounts_ValidationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="GeneralError" name="GeneralError" message="tns:IQueryAccountSummaryService_FetchForeignExchangeAccounts_GeneralError_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchAuthorizationAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchAuthorizationAccounts" message="tns:IQueryAccountSummaryService_FetchAuthorizationAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchAuthorizationAccountsResponse" message="tns:IQueryAccountSummaryService_FetchAuthorizationAccounts_OutputMessage" />
+      <wsdl:fault wsaw:Action="EAI operation" name="EnterpriseApplicationIntegrationError" message="tns:IQueryAccountSummaryService_FetchAuthorizationAccounts_EnterpriseApplicationIntegrationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="External system call" name="ExternalSystemError" message="tns:IQueryAccountSummaryService_FetchAuthorizationAccounts_ExternalSystemError_FaultMessage" />
+      <wsdl:fault wsaw:Action="Validation" name="ValidationError" message="tns:IQueryAccountSummaryService_FetchAuthorizationAccounts_ValidationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="GeneralError" name="GeneralError" message="tns:IQueryAccountSummaryService_FetchAuthorizationAccounts_GeneralError_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchFundInvestmentItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchFundInvestmentItems" message="tns:IQueryAccountSummaryService_FetchFundInvestmentItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchFundInvestmentItemsResponse" message="tns:IQueryAccountSummaryService_FetchFundInvestmentItems_OutputMessage" />
+      <wsdl:fault wsaw:Action="EAI operation" name="EnterpriseApplicationIntegrationError" message="tns:IQueryAccountSummaryService_FetchFundInvestmentItems_EnterpriseApplicationIntegrationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="External system call" name="ExternalSystemError" message="tns:IQueryAccountSummaryService_FetchFundInvestmentItems_ExternalSystemError_FaultMessage" />
+      <wsdl:fault wsaw:Action="Validation" name="ValidationError" message="tns:IQueryAccountSummaryService_FetchFundInvestmentItems_ValidationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="GeneralError" name="GeneralError" message="tns:IQueryAccountSummaryService_FetchFundInvestmentItems_GeneralError_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchLoanAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchLoanAccounts" message="tns:IQueryAccountSummaryService_FetchLoanAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/FetchLoanAccountsResponse" message="tns:IQueryAccountSummaryService_FetchLoanAccounts_OutputMessage" />
+      <wsdl:fault wsaw:Action="EAI operation" name="EnterpriseApplicationIntegrationError" message="tns:IQueryAccountSummaryService_FetchLoanAccounts_EnterpriseApplicationIntegrationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="External system call" name="ExternalSystemError" message="tns:IQueryAccountSummaryService_FetchLoanAccounts_ExternalSystemError_FaultMessage" />
+      <wsdl:fault wsaw:Action="Validation" name="ValidationError" message="tns:IQueryAccountSummaryService_FetchLoanAccounts_ValidationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="GeneralError" name="GeneralError" message="tns:IQueryAccountSummaryService_FetchLoanAccounts_GeneralError_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryCreditCardSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/QueryCreditCardSummary" message="tns:IQueryAccountSummaryService_QueryCreditCardSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryAccountSummaryService/QueryCreditCardSummaryResponse" message="tns:IQueryAccountSummaryService_QueryCreditCardSummary_OutputMessage" />
+      <wsdl:fault wsaw:Action="EAI operation" name="EnterpriseApplicationIntegrationError" message="tns:IQueryAccountSummaryService_QueryCreditCardSummary_EnterpriseApplicationIntegrationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="External system call" name="ExternalSystemError" message="tns:IQueryAccountSummaryService_QueryCreditCardSummary_ExternalSystemError_FaultMessage" />
+      <wsdl:fault wsaw:Action="Validation" name="ValidationError" message="tns:IQueryAccountSummaryService_QueryCreditCardSummary_ValidationError_FaultMessage" />
+      <wsdl:fault wsaw:Action="GeneralError" name="GeneralError" message="tns:IQueryAccountSummaryService_QueryCreditCardSummary_GeneralError_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IQueryAccountSummaryService" type="tns:IQueryAccountSummaryService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IQueryAccountSummaryService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="FetchTotalSummary">
+      <soap12:operation soapAction="http://tempuri.org/IQueryAccountSummaryService/FetchTotalSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnterpriseApplicationIntegrationError">
+        <soap12:fault use="literal" name="EnterpriseApplicationIntegrationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExternalSystemError">
+        <soap12:fault use="literal" name="ExternalSystemError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationError">
+        <soap12:fault use="literal" name="ValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="GeneralError">
+        <soap12:fault use="literal" name="GeneralError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FetchTaiwanDollarAccounts">
+      <soap12:operation soapAction="http://tempuri.org/IQueryAccountSummaryService/FetchTaiwanDollarAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnterpriseApplicationIntegrationError">
+        <soap12:fault use="literal" name="EnterpriseApplicationIntegrationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExternalSystemError">
+        <soap12:fault use="literal" name="ExternalSystemError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationError">
+        <soap12:fault use="literal" name="ValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="GeneralError">
+        <soap12:fault use="literal" name="GeneralError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FetchForeignExchangeAccounts">
+      <soap12:operation soapAction="http://tempuri.org/IQueryAccountSummaryService/FetchForeignExchangeAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnterpriseApplicationIntegrationError">
+        <soap12:fault use="literal" name="EnterpriseApplicationIntegrationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExternalSystemError">
+        <soap12:fault use="literal" name="ExternalSystemError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationError">
+        <soap12:fault use="literal" name="ValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="GeneralError">
+        <soap12:fault use="literal" name="GeneralError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FetchAuthorizationAccounts">
+      <soap12:operation soapAction="http://tempuri.org/IQueryAccountSummaryService/FetchAuthorizationAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnterpriseApplicationIntegrationError">
+        <soap12:fault use="literal" name="EnterpriseApplicationIntegrationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExternalSystemError">
+        <soap12:fault use="literal" name="ExternalSystemError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationError">
+        <soap12:fault use="literal" name="ValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="GeneralError">
+        <soap12:fault use="literal" name="GeneralError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FetchFundInvestmentItems">
+      <soap12:operation soapAction="http://tempuri.org/IQueryAccountSummaryService/FetchFundInvestmentItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnterpriseApplicationIntegrationError">
+        <soap12:fault use="literal" name="EnterpriseApplicationIntegrationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExternalSystemError">
+        <soap12:fault use="literal" name="ExternalSystemError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationError">
+        <soap12:fault use="literal" name="ValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="GeneralError">
+        <soap12:fault use="literal" name="GeneralError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FetchLoanAccounts">
+      <soap12:operation soapAction="http://tempuri.org/IQueryAccountSummaryService/FetchLoanAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnterpriseApplicationIntegrationError">
+        <soap12:fault use="literal" name="EnterpriseApplicationIntegrationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExternalSystemError">
+        <soap12:fault use="literal" name="ExternalSystemError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationError">
+        <soap12:fault use="literal" name="ValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="GeneralError">
+        <soap12:fault use="literal" name="GeneralError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="QueryCreditCardSummary">
+      <soap12:operation soapAction="http://tempuri.org/IQueryAccountSummaryService/QueryCreditCardSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="EnterpriseApplicationIntegrationError">
+        <soap12:fault use="literal" name="EnterpriseApplicationIntegrationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ExternalSystemError">
+        <soap12:fault use="literal" name="ExternalSystemError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ValidationError">
+        <soap12:fault use="literal" name="ValidationError" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="GeneralError">
+        <soap12:fault use="literal" name="GeneralError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QueryAccountSummaryService">
+    <wsdl:port name="NetTcpBinding_IQueryAccountSummaryService" binding="tns:NetTcpBinding_IQueryAccountSummaryService">
+      <soap12:address location="net.tcp://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

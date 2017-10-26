@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.AccountQuery" />
+  <xs:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains" />
+  <xs:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Investment" />
+  <xs:import schemaLocation="http://sk0341vm231190.mktb.com.tw/SKB.iBankService/QueryAccountSummaryService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Loan" />
+  <xs:element name="FetchTotalSummary">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchTotalSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.AccountQuery" minOccurs="0" name="FetchTotalSummaryResult" nillable="true" type="q1:AccountTotalSummary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchTaiwanDollarAccounts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchTaiwanDollarAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains" minOccurs="0" name="FetchTaiwanDollarAccountsResult" nillable="true" type="q2:ArrayOfAccountUsage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchForeignExchangeAccounts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchForeignExchangeAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains" minOccurs="0" name="FetchForeignExchangeAccountsResult" nillable="true" type="q3:ArrayOfAccountUsage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchAuthorizationAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isForeign" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchAuthorizationAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains" minOccurs="0" name="FetchAuthorizationAccountsResult" nillable="true" type="q4:ArrayOfAccountUsage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchFundInvestmentItems">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchFundInvestmentItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Investment" minOccurs="0" name="FetchFundInvestmentItemsResult" nillable="true" type="q5:ArrayOfFundInvestmentItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchLoanAccounts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FetchLoanAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Loan" minOccurs="0" name="FetchLoanAccountsResult" nillable="true" type="q6:ArrayOfLoanAccountInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCreditCardSummary">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryCreditCardSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains" minOccurs="0" name="QueryCreditCardSummaryResult" nillable="true" type="q7:QueryCreditCardSummary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

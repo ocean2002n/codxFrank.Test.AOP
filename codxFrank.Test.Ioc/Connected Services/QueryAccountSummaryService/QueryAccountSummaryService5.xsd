@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Investment" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.InternetBank.Domains.Investment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfFundInvestmentItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FundInvestmentItem" nillable="true" type="tns:FundInvestmentItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFundInvestmentItem" nillable="true" type="tns:ArrayOfFundInvestmentItem" />
+  <xs:complexType name="FundInvestmentItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExchangeRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExchangeRateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FundCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FundName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvestmentCapital" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchaseAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PurchaseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RedemptionUnit" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReferenceForPresentValue" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReferenceForPresentValueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReferenceForProfitsAndLosses" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReferenceForRedemptionNet" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReferenceForTotalRateOfReturn" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TrustNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrustType" type="tns:TrustType" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FundInvestmentItem" nillable="true" type="tns:FundInvestmentItem" />
+  <xs:simpleType name="TrustType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="LumpSum" />
+      <xs:enumeration value="DollarCostAveraging" />
+      <xs:enumeration value="ValueAveraging" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrustType" nillable="true" type="tns:TrustType" />
+</xs:schema>
